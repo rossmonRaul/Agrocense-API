@@ -1,0 +1,15 @@
+C:\AgrosenseService\Agrosense.Service.BusinessLogic.Interfaces\bin\Debug\net8.0\Agrosense.Service.BusinessLogic.Interface.deps.json
+C:\AgrosenseService\Agrosense.Service.BusinessLogic.Interfaces\bin\Debug\net8.0\Agrosense.Service.BusinessLogic.Interface.dll
+C:\AgrosenseService\Agrosense.Service.BusinessLogic.Interfaces\bin\Debug\net8.0\Agrosense.Service.BusinessLogic.Interface.pdb
+C:\AgrosenseService\Agrosense.Service.BusinessLogic.Interfaces\bin\Debug\net8.0\Agrosense.Service.Model.dll
+C:\AgrosenseService\Agrosense.Service.BusinessLogic.Interfaces\bin\Debug\net8.0\Agrosense.Service.Model.pdb
+C:\AgrosenseService\Agrosense.Service.BusinessLogic.Interfaces\obj\Debug\net8.0\Agrosense.Service.BusinessLogic.Interface.csproj.AssemblyReference.cache
+C:\AgrosenseService\Agrosense.Service.BusinessLogic.Interfaces\obj\Debug\net8.0\Agrosense.Service.BusinessLogic.Interface.GeneratedMSBuildEditorConfig.editorconfig
+C:\AgrosenseService\Agrosense.Service.BusinessLogic.Interfaces\obj\Debug\net8.0\Agrosense.Service.BusinessLogic.Interface.AssemblyInfoInputs.cache
+C:\AgrosenseService\Agrosense.Service.BusinessLogic.Interfaces\obj\Debug\net8.0\Agrosense.Service.BusinessLogic.Interface.AssemblyInfo.cs
+C:\AgrosenseService\Agrosense.Service.BusinessLogic.Interfaces\obj\Debug\net8.0\Agrosense.Service.BusinessLogic.Interface.csproj.CoreCompileInputs.cache
+C:\AgrosenseService\Agrosense.Service.BusinessLogic.Interfaces\obj\Debug\net8.0\Agrosense.Service.BusinessLogic.Interface.csproj.CopyComplete
+C:\AgrosenseService\Agrosense.Service.BusinessLogic.Interfaces\obj\Debug\net8.0\Agrosense.Service.BusinessLogic.Interface.dll
+C:\AgrosenseService\Agrosense.Service.BusinessLogic.Interfaces\obj\Debug\net8.0\refint\Agrosense.Service.BusinessLogic.Interface.dll
+C:\AgrosenseService\Agrosense.Service.BusinessLogic.Interfaces\obj\Debug\net8.0\Agrosense.Service.BusinessLogic.Interface.pdb
+C:\AgrosenseService\Agrosense.Service.BusinessLogic.Interfaces\obj\Debug\net8.0\ref\Agrosense.Service.BusinessLogic.Interface.dll

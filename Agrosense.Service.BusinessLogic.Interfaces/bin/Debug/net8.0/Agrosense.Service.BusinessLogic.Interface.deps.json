@@ -1,0 +1,36 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v8.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v8.0": {
+      "Agrosense.Service.BusinessLogic.Interface/1.0.0": {
+        "dependencies": {
+          "Agrosense.Service.Model": "1.0.0"
+        },
+        "runtime": {
+          "Agrosense.Service.BusinessLogic.Interface.dll": {}
+        }
+      },
+      "Agrosense.Service.Model/1.0.0": {
+        "runtime": {
+          "Agrosense.Service.Model.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Agrosense.Service.BusinessLogic.Interface/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Agrosense.Service.Model/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

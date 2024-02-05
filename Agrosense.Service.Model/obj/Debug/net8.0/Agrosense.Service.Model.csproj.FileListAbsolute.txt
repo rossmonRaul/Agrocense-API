@@ -1,0 +1,11 @@
+C:\AgrosenseService\Agrosense.Service.Model\bin\Debug\net8.0\Agrosense.Service.Model.deps.json
+C:\AgrosenseService\Agrosense.Service.Model\bin\Debug\net8.0\Agrosense.Service.Model.dll
+C:\AgrosenseService\Agrosense.Service.Model\bin\Debug\net8.0\Agrosense.Service.Model.pdb
+C:\AgrosenseService\Agrosense.Service.Model\obj\Debug\net8.0\Agrosense.Service.Model.GeneratedMSBuildEditorConfig.editorconfig
+C:\AgrosenseService\Agrosense.Service.Model\obj\Debug\net8.0\Agrosense.Service.Model.AssemblyInfoInputs.cache
+C:\AgrosenseService\Agrosense.Service.Model\obj\Debug\net8.0\Agrosense.Service.Model.AssemblyInfo.cs
+C:\AgrosenseService\Agrosense.Service.Model\obj\Debug\net8.0\Agrosense.Service.Model.csproj.CoreCompileInputs.cache
+C:\AgrosenseService\Agrosense.Service.Model\obj\Debug\net8.0\Agrosense.Service.Model.dll
+C:\AgrosenseService\Agrosense.Service.Model\obj\Debug\net8.0\refint\Agrosense.Service.Model.dll
+C:\AgrosenseService\Agrosense.Service.Model\obj\Debug\net8.0\Agrosense.Service.Model.pdb
+C:\AgrosenseService\Agrosense.Service.Model\obj\Debug\net8.0\ref\Agrosense.Service.Model.dll

@@ -1,0 +1,15 @@
+C:\AgrosenseService\Agrosense.Service.DataAccess.Interfaces\bin\Debug\net8.0\Agrosense.Service.DataAccess.Interface.deps.json
+C:\AgrosenseService\Agrosense.Service.DataAccess.Interfaces\bin\Debug\net8.0\Agrosense.Service.DataAccess.Interface.dll
+C:\AgrosenseService\Agrosense.Service.DataAccess.Interfaces\bin\Debug\net8.0\Agrosense.Service.DataAccess.Interface.pdb
+C:\AgrosenseService\Agrosense.Service.DataAccess.Interfaces\bin\Debug\net8.0\Agrosense.Service.Model.dll
+C:\AgrosenseService\Agrosense.Service.DataAccess.Interfaces\bin\Debug\net8.0\Agrosense.Service.Model.pdb
+C:\AgrosenseService\Agrosense.Service.DataAccess.Interfaces\obj\Debug\net8.0\Agrosense.Service.DataAccess.Interface.csproj.AssemblyReference.cache
+C:\AgrosenseService\Agrosense.Service.DataAccess.Interfaces\obj\Debug\net8.0\Agrosense.Service.DataAccess.Interface.GeneratedMSBuildEditorConfig.editorconfig
+C:\AgrosenseService\Agrosense.Service.DataAccess.Interfaces\obj\Debug\net8.0\Agrosense.Service.DataAccess.Interface.AssemblyInfoInputs.cache
+C:\AgrosenseService\Agrosense.Service.DataAccess.Interfaces\obj\Debug\net8.0\Agrosense.Service.DataAccess.Interface.AssemblyInfo.cs
+C:\AgrosenseService\Agrosense.Service.DataAccess.Interfaces\obj\Debug\net8.0\Agrosense.Service.DataAccess.Interface.csproj.CoreCompileInputs.cache
+C:\AgrosenseService\Agrosense.Service.DataAccess.Interfaces\obj\Debug\net8.0\Agrosense.Service.DataAccess.Interface.csproj.CopyComplete
+C:\AgrosenseService\Agrosense.Service.DataAccess.Interfaces\obj\Debug\net8.0\Agrosense.Service.DataAccess.Interface.dll
+C:\AgrosenseService\Agrosense.Service.DataAccess.Interfaces\obj\Debug\net8.0\refint\Agrosense.Service.DataAccess.Interface.dll
+C:\AgrosenseService\Agrosense.Service.DataAccess.Interfaces\obj\Debug\net8.0\Agrosense.Service.DataAccess.Interface.pdb
+C:\AgrosenseService\Agrosense.Service.DataAccess.Interfaces\obj\Debug\net8.0\ref\Agrosense.Service.DataAccess.Interface.dll
