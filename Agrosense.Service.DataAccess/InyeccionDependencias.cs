@@ -21,6 +21,9 @@ namespace Agrosense.Service.DataAccess
             //repositorios de cada CRUD
             //services.AddScoped<IRepositorioCanales, RepositorioCanales>();
             services.AddScoped<IRepositorioUsuario, RepositorioUsuario>();
+            services.AddScoped<IRepositorioEmpresa, RepositorioEmpresa>();
+            services.AddScoped<IRepositorioFinca, RepositorioFinca>();
+            services.AddScoped<IRepositorioParcela, RepositorioParcela>();
 
             return services;
         }

@@ -1,24 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\AgrosenseService\\Agrosense.Service.Model\\Agrosense.Service.Model.csproj": {}
+    "C:\\Users\\josej\\Source\\Repos\\rossmonRaul\\Agrocense-API\\Agrosense.Service.Model\\Agrosense.Service.Model.csproj": {}
   },
   "projects": {
-    "C:\\AgrosenseService\\Agrosense.Service.Model\\Agrosense.Service.Model.csproj": {
+    "C:\\Users\\josej\\Source\\Repos\\rossmonRaul\\Agrocense-API\\Agrosense.Service.Model\\Agrosense.Service.Model.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\AgrosenseService\\Agrosense.Service.Model\\Agrosense.Service.Model.csproj",
+        "projectUniqueName": "C:\\Users\\josej\\Source\\Repos\\rossmonRaul\\Agrocense-API\\Agrosense.Service.Model\\Agrosense.Service.Model.csproj",
         "projectName": "Agrosense.Service.Model",
-        "projectPath": "C:\\AgrosenseService\\Agrosense.Service.Model\\Agrosense.Service.Model.csproj",
-        "packagesPath": "C:\\Users\\edufo\\.nuget\\packages\\",
-        "outputPath": "C:\\AgrosenseService\\Agrosense.Service.Model\\obj\\",
+        "projectPath": "C:\\Users\\josej\\Source\\Repos\\rossmonRaul\\Agrocense-API\\Agrosense.Service.Model\\Agrosense.Service.Model.csproj",
+        "packagesPath": "C:\\Users\\josej\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\josej\\Source\\Repos\\rossmonRaul\\Agrocense-API\\Agrosense.Service.Model\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\edufo\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\josej\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -27,12 +26,7 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "https://api.nuget.org/v3/index.json": {},
-          "https://gmgnuget.azurewebsites.net/nuget": {},
-          "https://gmgnuget.azurewebsites.net/nuget/": {},
-          "https://gmgts.pkgs.visualstudio.com/_packaging/GMG-Feeds%40Local/nuget/v3/index.json": {},
-          "https://gmgts.pkgs.visualstudio.com/_packaging/GMG-Feeds/nuget/v3/index.json": {},
-          "https://www.myget.org/F/applicationinsights-sdk-labs/": {}
+          "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net8.0": {

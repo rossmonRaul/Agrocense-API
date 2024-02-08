@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "rnYGmp49H2R5lBZBAb45+9huOTYXdp1Idje1fU6AXjqZyQVdog9vB7p+FMlGcb+iqFnCs9lcKlhCL9KQztAQLg==",
+  "dgSpecHash": "QHCw1kzxFRKXy91IqpZRVjMTjU5DhjlSklJtH3ytZM0KC5v5ct0nmf6xD10QPwIcA/Pe1w5WZic/MTZvcs4JBg==",
   "success": true,
-  "projectFilePath": "C:\\AgrosenseService\\Agrosense.Service.DataAccess.Interfaces\\Agrosense.Service.DataAccess.Interface.csproj",
+  "projectFilePath": "C:\\Users\\josej\\Source\\Repos\\rossmonRaul\\Agrocense-API\\Agrosense.Service.DataAccess.Interfaces\\Agrosense.Service.DataAccess.Interface.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }
