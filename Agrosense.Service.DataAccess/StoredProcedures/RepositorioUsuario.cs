@@ -50,9 +50,16 @@ namespace Agrosense.Service.DataAccess.StoredProcedures
         {
             try
             {
+               
+
                 Dictionary<string, object> data = new Dictionary<string, object>();
-                data.Add("@Nombre", entityUsuario.Nombre);
-                string query = "SPInsertarTablaPrueba";
+                data.Add("@Usuario", entityUsuario.Usuario);
+                data.Add("@Correo", entityUsuario.Correo);
+                data.Add("@Contrasena", entityUsuario.Contrasena);
+                data.Add("@idEmpresa", entityUsuario.idEmpresa);
+                data.Add("@idFinca", entityUsuario.idFinca);
+                data.Add("@idParcela", entityUsuario.idParcela);
+                string query = "SPGuardarUsuario";
 
                 return await this.contextoBD.EjecutarSP(query, data);
             }

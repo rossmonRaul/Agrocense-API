@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Agrosense.Service.BusinessLogic.Interface")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+3d2df407d0704cbe601e84ef6d837ec3523c7202")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+06040b058cc6c0c629af4d902deccbae9549fd38")]
 [assembly: System.Reflection.AssemblyProductAttribute("Agrosense.Service.BusinessLogic.Interface")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Agrosense.Service.BusinessLogic.Interface")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
