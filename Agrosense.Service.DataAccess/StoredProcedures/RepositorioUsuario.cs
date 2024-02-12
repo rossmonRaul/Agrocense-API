@@ -68,6 +68,26 @@ namespace Agrosense.Service.DataAccess.StoredProcedures
                 throw;
             }
         }
+
+        public async Task<DtoUsuarioLogueado> ValidarUsuario(EntityUsuario entityUsuario)
+        {
+            try
+            {
+
+
+                Dictionary<string, object> data = new Dictionary<string, object>();
+                data.Add("@Usuario", entityUsuario.Usuario);
+                data.Add("@Contrasena", entityUsuario.Contrasena);
+                
+                string query = "SPObtenerUsuarioPoruUsuarioYContrasena";
+
+                return await this.contextoBD.ObtenerDato<DtoUsuarioLogueado>(query, data);
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
     }
 }
 

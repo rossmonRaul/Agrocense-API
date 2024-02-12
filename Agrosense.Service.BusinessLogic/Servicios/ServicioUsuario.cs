@@ -29,5 +29,9 @@ namespace Agrosense.Service.BusinessLogic.Servicios
         {
             return await this.repositorioUsuario.InsertarUsuario(entityUsuario);
         }
+        public async Task<DtoUsuarioLogueado> ValidarUsuario(EntityUsuario entityUsuario)
+        {
+            return await this.repositorioUsuario.ValidarUsuario(entityUsuario);
+        }
     }
 }

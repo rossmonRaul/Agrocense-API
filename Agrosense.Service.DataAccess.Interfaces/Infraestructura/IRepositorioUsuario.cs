@@ -12,5 +12,6 @@ namespace Agrosense.Service.DataAccess.Interface.Infraestructura
     {
         Task<List<DtoUsuario>> ObtenerUsuarios();
         Task<DtoRespuestaSP> InsertarUsuario(EntityUsuario entityUsuario);
+        Task<DtoUsuarioLogueado> ValidarUsuario(EntityUsuario entityUsuario);
     }
 }

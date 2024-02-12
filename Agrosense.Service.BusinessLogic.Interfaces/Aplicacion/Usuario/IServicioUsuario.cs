@@ -12,6 +12,7 @@ namespace Agrosense.Service.BusinessLogic.Interface.Aplicacion.Usuario
     public interface IServicioUsuario
     {
         Task<List<DtoUsuario>> ObtenerUsuarios();
+        Task<DtoUsuarioLogueado> ValidarUsuario(EntityUsuario entityUsuario);
         Task<DtoRespuestaSP> InsertarUsuario(EntityUsuario entityUsuario);
     }
 }

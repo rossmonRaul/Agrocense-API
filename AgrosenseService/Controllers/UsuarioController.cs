@@ -35,6 +35,11 @@ namespace AgrosenseService.Controllers
         {
             return Json(await this.servicioUsuario.InsertarUsuario(entityUsuario));
         }
+        [HttpPost]
+        public async Task<JsonResult> ValidarUsuario(EntityUsuario entityUsuario)
+        {
+            return Json(await this.servicioUsuario.ValidarUsuario(entityUsuario));
+        }
 
     }
 }

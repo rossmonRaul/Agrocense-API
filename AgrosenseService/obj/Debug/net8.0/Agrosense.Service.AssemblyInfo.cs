@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Agrosense.Service")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+06040b058cc6c0c629af4d902deccbae9549fd38")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+6a45b5a0d2869b4a30eaf5b3c682c43fa97278be")]
 [assembly: System.Reflection.AssemblyProductAttribute("Agrosense.Service")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Agrosense.Service")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
