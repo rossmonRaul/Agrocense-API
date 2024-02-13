@@ -3,3 +3,39 @@
 ################################################################################
 
 /.vs/AgrosenseService/FileContentIndex
+
+# Carpeta binaria generada por Visual Studio
+bin/
+obj/
+
+# Carpeta de dependencias de NuGet
+packages/
+
+# Archivos generados por Visual Studio
+*.user
+*.suo
+*.cache
+
+# Archivos de caché y configuraciones de usuario de Visual Studio
+.vs/
+.vscode/
+
+# Archivos de compilación
+*.exe
+*.dll
+*.pdb
+
+# Archivos de configuración específicos de usuario
+*.log
+*.sqlite
+*.sqlite3
+*.bak
+
+# Carpeta de resultados de pruebas
+TestResults/
+
+# Visual Studio
+*.sln.docstates
+
+# Carpeta de resultados de pruebas
+[Tt]est[Rr]esult*/

@@ -53,7 +53,7 @@ namespace Agrosense.Service.DataAccess.StoredProcedures
                
 
                 Dictionary<string, object> data = new Dictionary<string, object>();
-                data.Add("@Usuario", entityUsuario.Usuario);
+                data.Add("@Identificacion", entityUsuario.Identificacion);
                 data.Add("@Correo", entityUsuario.Correo);
                 data.Add("@Contrasena", entityUsuario.Contrasena);
                 data.Add("@idEmpresa", entityUsuario.idEmpresa);
@@ -76,10 +76,10 @@ namespace Agrosense.Service.DataAccess.StoredProcedures
 
 
                 Dictionary<string, object> data = new Dictionary<string, object>();
-                data.Add("@Usuario", entityUsuario.Usuario);
+                data.Add("@Usuario", entityUsuario.Identificacion);
                 data.Add("@Contrasena", entityUsuario.Contrasena);
                 
-                string query = "SPObtenerUsuarioPoruUsuarioYContrasena";
+                string query = "SPObtenerUsuarioPorUsuarioYContrasena";
 
                 return await this.contextoBD.ObtenerDato<DtoUsuarioLogueado>(query, data);
             }
