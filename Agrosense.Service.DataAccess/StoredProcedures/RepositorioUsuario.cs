@@ -18,27 +18,29 @@ namespace Agrosense.Service.DataAccess.StoredProcedures
             this.contextoBD = contextoBD;
         }
 
-        public async Task<List<DtoUsuario>> ObtenerUsuarios()
+        public async Task<List<DtoUsuario>> ObtenerUsuariosPorRol3(EntityUsuario entityUsuario)
+        {
+            try
+            {
+                Dictionary<string, object> data = new Dictionary<string, object>();
+                data.Add("@IdEmpresa", entityUsuario.idEmpresa);
+                string query = "ObtenerUsuariosPorRol3";
+
+                return await this.contextoBD.ObtenerListaDeDatos<DtoUsuario>(query, data);
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+        public async Task<List<DtoUsuario>> ObtenerUsuariosPorRol4()
         {
             try
             {
                 //string query = "SPPrueba";
-                string query = "SPObtenerUsuarioTablaPrueba";
+                string query = "ObtenerUsuariosPorRol4";
                 var result = await this.contextoBD.ObtenerListaDeDatos<DtoUsuario>(query);
-                /*
-                DtoUsuario a = new DtoUsuario();
-                a.Id = 1;a.Nombre = "Prueba1";
-
-                DtoUsuario b = new DtoUsuario();
-                b.Id = 2; b.Nombre = "Prueba2";
-
-                List<DtoUsuario> result = new List<DtoUsuario>()
-                {
-
-                    a,
-                    b
-                };
-                */
+                
                 return result;
             }
             catch (Exception)
@@ -56,10 +58,53 @@ namespace Agrosense.Service.DataAccess.StoredProcedures
                 data.Add("@Identificacion", entityUsuario.Identificacion);
                 data.Add("@Correo", entityUsuario.Correo);
                 data.Add("@Contrasena", entityUsuario.Contrasena);
-                data.Add("@idEmpresa", entityUsuario.idEmpresa);
-                data.Add("@idFinca", entityUsuario.idFinca);
-                data.Add("@idParcela", entityUsuario.idParcela);
                 string query = "SPGuardarUsuario";
+
+                return await this.contextoBD.EjecutarSP(query, data);
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+
+        public async Task<DtoRespuestaSP> ActualizarUsuario(EntityUsuario entityUsuario)
+        {
+            try
+            {
+
+
+                Dictionary<string, object> data = new Dictionary<string, object>();
+                data.Add("@Identificacion", entityUsuario.Identificacion);
+                data.Add("@IdEmpresa", entityUsuario.idEmpresa);
+                data.Add("@IdFinca", entityUsuario.idFinca);
+                data.Add("@IdParcela", entityUsuario.idParcela);
+                data.Add("@IdRol", entityUsuario.idRol);
+                data.Add("@Estado", entityUsuario.Estado);
+                string query = "SPActualizarUsuario";
+
+                return await this.contextoBD.EjecutarSP(query, data);
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+
+        public async Task<DtoRespuestaSP> GuardarUsuarioPorSuperUsuario(EntityUsuario entityUsuario)
+        {
+            try
+            {
+
+
+                Dictionary<string, object> data = new Dictionary<string, object>();
+                data.Add("@Identificacion", entityUsuario.Identificacion);
+                data.Add("@Correo", entityUsuario.Correo);
+                data.Add("@Contrasena", entityUsuario.Contrasena);
+                data.Add("@IdEmpresa", entityUsuario.idEmpresa);
+                data.Add("@IdFinca", entityUsuario.idFinca);
+                data.Add("@IdParcela", entityUsuario.idParcela);
+                string query = "SPGuardarUsuarioPorSuperUsuario";
 
                 return await this.contextoBD.EjecutarSP(query, data);
             }

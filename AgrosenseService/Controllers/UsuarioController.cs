@@ -24,16 +24,31 @@ namespace AgrosenseService.Controllers
 
 
         //[HttpGet("[action]")]
-        [HttpGet]
-        public async Task<JsonResult> ObtenerUsuarios()
+        [HttpPost]
+        public async Task<JsonResult> ObtenerUsuariosPorRol3(EntityUsuario entityUsuario)
         {
-            return Json(await this.servicioUsuario.ObtenerUsuarios());
+            return Json(await this.servicioUsuario.ObtenerUsuariosPorRol3(entityUsuario));
+        }
+        [HttpGet]
+        public async Task<JsonResult> ObtenerUsuariosPorRol4()
+        {
+            return Json(await this.servicioUsuario.ObtenerUsuariosPorRol4());
         }
 
         [HttpPost]
         public async Task<JsonResult> InsertarUsuario(EntityUsuario entityUsuario)
         {
             return Json(await this.servicioUsuario.InsertarUsuario(entityUsuario));
+        }
+        [HttpPost]
+        public async Task<JsonResult> GuardarUsuarioPorSuperUsuario(EntityUsuario entityUsuario)
+        {
+            return Json(await this.servicioUsuario.GuardarUsuarioPorSuperUsuario(entityUsuario));
+        }
+        [HttpPost]
+        public async Task<JsonResult> ActualizarUsuario(EntityUsuario entityUsuario)
+        {
+            return Json(await this.servicioUsuario.ActualizarUsuario(entityUsuario));
         }
         [HttpPost]
         public async Task<JsonResult> ValidarUsuario(EntityUsuario entityUsuario)
