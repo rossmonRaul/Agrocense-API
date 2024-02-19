@@ -45,7 +45,7 @@ namespace AgrosenseService.Controllers
         {
             return Json(await this.servicioUsuario.GuardarUsuarioPorSuperUsuario(entityUsuario));
         }
-        [HttpPost]
+        [HttpPut]
         public async Task<JsonResult> ActualizarUsuario(EntityUsuario entityUsuario)
         {
             return Json(await this.servicioUsuario.ActualizarUsuario(entityUsuario));
