@@ -106,6 +106,26 @@ namespace Agrosense.Service.DataAccess.StoredProcedures
             }
         }
 
+        public async Task<DtoRespuestaSP> ActualizarUsuarioAdministrador(EntityUsuario entityUsuario)
+        {
+            try
+            {
+
+
+                Dictionary<string, object> data = new Dictionary<string, object>();
+                data.Add("@Identificacion", entityUsuario.Identificacion);
+                data.Add("@IdEmpresa", entityUsuario.idEmpresa);
+                data.Add("@Correo", entityUsuario.Correo);
+                string query = "SPActualizarUsuarioAdministrador";
+
+                return await this.contextoBD.EjecutarSP(query, data);
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+
         public async Task<DtoRespuestaSP> EliminarUsuario(EntityUsuario entityUsuario)
         {
             try

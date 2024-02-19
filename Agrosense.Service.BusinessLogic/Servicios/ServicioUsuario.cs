@@ -41,6 +41,10 @@ namespace Agrosense.Service.BusinessLogic.Servicios
         {
             return await this.repositorioUsuario.ActualizarUsuario(entityUsuario);
         }
+        public async Task<DtoRespuestaSP> ActualizarUsuarioAdministrador(EntityUsuario entityUsuario)
+        {
+            return await this.repositorioUsuario.ActualizarUsuarioAdministrador(entityUsuario);
+        }
         public async Task<DtoRespuestaSP> EliminarUsuario(EntityUsuario entityUsuario)
         {
             return await this.repositorioUsuario.EliminarUsuario(entityUsuario);

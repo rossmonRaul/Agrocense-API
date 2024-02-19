@@ -55,6 +55,11 @@ namespace AgrosenseService.Controllers
         {
             return Json(await this.servicioUsuario.ActualizarUsuario(entityUsuario));
         }
+        [HttpPut]
+        public async Task<JsonResult> ActualizarUsuarioAdministrador(EntityUsuario entityUsuario)
+        {
+            return Json(await this.servicioUsuario.ActualizarUsuarioAdministrador(entityUsuario));
+        }
         [HttpPost]
         public async Task<JsonResult> ValidarUsuario(EntityUsuario entityUsuario)
         {
