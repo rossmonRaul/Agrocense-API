@@ -10,7 +10,7 @@ namespace Agrosense.Service.DataAccess.Interface.Infraestructura
 {
     public interface IRepositorioUsuario
     {
-        Task<List<DtoUsuario>> ObtenerUsuariosPorRol2(EntityUsuario entityUsuario);
+        Task<List<DtoUsuario>> ObtenerUsuariosPorRol2();
         Task<List<DtoUsuario>> ObtenerUsuariosPorRol3(EntityUsuario entityUsuario);
         Task<List<DtoUsuario>> ObtenerUsuariosPorRol4();
         Task<DtoRespuestaSP> InsertarUsuario(EntityUsuario entityUsuario);

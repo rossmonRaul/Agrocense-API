@@ -18,15 +18,15 @@ namespace Agrosense.Service.DataAccess.StoredProcedures
             this.contextoBD = contextoBD;
         }
 
-        public async Task<List<DtoUsuario>> ObtenerUsuariosPorRol2(EntityUsuario entityUsuario)
+        public async Task<List<DtoUsuario>> ObtenerUsuariosPorRol2()
         {
             try
             {
-                Dictionary<string, object> data = new Dictionary<string, object>();
-                data.Add("@IdEmpresa", entityUsuario.idEmpresa);
+                
                 string query = "ObtenerUsuariosPorRol2";
+                var result = await this.contextoBD.ObtenerListaDeDatos<DtoUsuario>(query);
 
-                return await this.contextoBD.ObtenerListaDeDatos<DtoUsuario>(query, data);
+                return result;
             }
             catch (Exception)
             {
@@ -52,7 +52,7 @@ namespace Agrosense.Service.DataAccess.StoredProcedures
         {
             try
             {
-                //string query = "SPPrueba";
+                
                 string query = "ObtenerUsuariosPorRol4";
                 var result = await this.contextoBD.ObtenerListaDeDatos<DtoUsuario>(query);
                 
