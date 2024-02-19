@@ -20,6 +20,10 @@ namespace Agrosense.Service.BusinessLogic.Servicios
             this.repositorioUsuario = repositorioUsuario;
         }
 
+        public async Task<List<DtoUsuario>> ObtenerUsuariosPorRol2(EntityUsuario entityUsuario)
+        {
+            return await this.repositorioUsuario.ObtenerUsuariosPorRol2(entityUsuario);
+        }
         public async Task<List<DtoUsuario>> ObtenerUsuariosPorRol3(EntityUsuario entityUsuario)
         {
             return await this.repositorioUsuario.ObtenerUsuariosPorRol3(entityUsuario);
@@ -36,6 +40,10 @@ namespace Agrosense.Service.BusinessLogic.Servicios
         public async Task<DtoRespuestaSP> ActualizarUsuario(EntityUsuario entityUsuario)
         {
             return await this.repositorioUsuario.ActualizarUsuario(entityUsuario);
+        }
+        public async Task<DtoRespuestaSP> EliminarUsuario(EntityUsuario entityUsuario)
+        {
+            return await this.repositorioUsuario.EliminarUsuario(entityUsuario);
         }
         public async Task<DtoRespuestaSP> GuardarUsuarioPorSuperUsuario(EntityUsuario entityUsuario)
         {

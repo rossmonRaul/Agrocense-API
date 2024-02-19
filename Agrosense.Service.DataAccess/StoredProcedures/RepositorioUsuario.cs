@@ -18,6 +18,21 @@ namespace Agrosense.Service.DataAccess.StoredProcedures
             this.contextoBD = contextoBD;
         }
 
+        public async Task<List<DtoUsuario>> ObtenerUsuariosPorRol2(EntityUsuario entityUsuario)
+        {
+            try
+            {
+                Dictionary<string, object> data = new Dictionary<string, object>();
+                data.Add("@IdEmpresa", entityUsuario.idEmpresa);
+                string query = "ObtenerUsuariosPorRol2";
+
+                return await this.contextoBD.ObtenerListaDeDatos<DtoUsuario>(query, data);
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
         public async Task<List<DtoUsuario>> ObtenerUsuariosPorRol3(EntityUsuario entityUsuario)
         {
             try
@@ -82,6 +97,24 @@ namespace Agrosense.Service.DataAccess.StoredProcedures
                 data.Add("@IdRol", entityUsuario.idRol);
                 data.Add("@Estado", entityUsuario.Estado);
                 string query = "SPActualizarUsuario";
+
+                return await this.contextoBD.EjecutarSP(query, data);
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+
+        public async Task<DtoRespuestaSP> EliminarUsuario(EntityUsuario entityUsuario)
+        {
+            try
+            {
+
+
+                Dictionary<string, object> data = new Dictionary<string, object>();
+                data.Add("@Identificacion", entityUsuario.Identificacion);
+                string query = "SPEliminarUsuario";
 
                 return await this.contextoBD.EjecutarSP(query, data);
             }

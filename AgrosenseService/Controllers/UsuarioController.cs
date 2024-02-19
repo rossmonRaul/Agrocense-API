@@ -25,6 +25,11 @@ namespace AgrosenseService.Controllers
 
         //[HttpGet("[action]")]
         [HttpPost]
+        public async Task<JsonResult> ObtenerUsuariosPorRol2(EntityUsuario entityUsuario)
+        {
+            return Json(await this.servicioUsuario.ObtenerUsuariosPorRol2(entityUsuario));
+        }
+        [HttpPost]
         public async Task<JsonResult> ObtenerUsuariosPorRol3(EntityUsuario entityUsuario)
         {
             return Json(await this.servicioUsuario.ObtenerUsuariosPorRol3(entityUsuario));
@@ -54,6 +59,12 @@ namespace AgrosenseService.Controllers
         public async Task<JsonResult> ValidarUsuario(EntityUsuario entityUsuario)
         {
             return Json(await this.servicioUsuario.ValidarUsuario(entityUsuario));
+        }
+
+        [HttpDelete]
+        public async Task<JsonResult> EliminarUsuario(EntityUsuario entityUsuario)
+        {
+            return Json(await this.servicioUsuario.EliminarUsuario(entityUsuario));
         }
 
     }

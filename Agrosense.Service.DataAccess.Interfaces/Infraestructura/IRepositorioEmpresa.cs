@@ -1,4 +1,5 @@
 ﻿using Agrosense.Service.Model.Dto;
+using Agrosense.Service.Model.Entity;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,5 +11,7 @@ namespace Agrosense.Service.DataAccess.Interface.Infraestructura
     public interface IRepositorioEmpresa
     {
         Task<List<DtoEmpresa>> ObtenerEmpresas();
+        Task<DtoRespuestaSP> InsertarEmpresa(EntityEmpresa entityEmpresa);
+        Task<DtoRespuestaSP> ActualizarEmpresa(EntityEmpresa entityEmpresa);
     }
 }
