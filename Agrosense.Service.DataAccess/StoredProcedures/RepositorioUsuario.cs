@@ -115,7 +115,7 @@ namespace Agrosense.Service.DataAccess.StoredProcedures
                 Dictionary<string, object> data = new Dictionary<string, object>();
                 data.Add("@Identificacion", entityUsuario.Identificacion);
                 data.Add("@IdEmpresa", entityUsuario.idEmpresa);
-                data.Add("@Correo", entityUsuario.Correo);
+                data.Add("@Contrasena", entityUsuario.Contrasena);
                 string query = "SPActualizarUsuarioAdministrador";
 
                 return await this.contextoBD.EjecutarSP(query, data);

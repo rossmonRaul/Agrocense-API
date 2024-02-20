@@ -11,7 +11,7 @@ namespace Agrosense.Service.DataAccess.Interface.Infraestructura
     public interface IRepositorioEmpresa
     {
         Task<List<DtoEmpresa>> ObtenerEmpresas();
-        Task<DtoRespuestaSP> InsertarEmpresa(EntityEmpresa entityEmpresa);
+        Task<DtoRespuestaSP> CrearEmpresa(EntityEmpresa entityEmpresa);
         Task<DtoRespuestaSP> ActualizarEmpresa(EntityEmpresa entityEmpresa);
     }
 }

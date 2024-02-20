@@ -24,9 +24,14 @@ namespace Agrosense.Service.Controllers
             return Json(await this.servicioEmpresa.ObtenerEmpresas());
         }
         [HttpPost]
-        public async Task<JsonResult> InsertarEmpresa(EntityEmpresa entityEmpresa)
+        public async Task<JsonResult> CrearEmpresa(EntityEmpresa entityEmpresa)
         {
-            return Json(await this.servicioEmpresa.InsertarEmpresa(entityEmpresa));
+            return Json(await this.servicioEmpresa.CrearEmpresa(entityEmpresa));
+        }
+        [HttpPut]
+        public async Task<JsonResult> ActualizarEmpresa(EntityEmpresa entityEmpresa)
+        {
+            return Json(await this.servicioEmpresa.ActualizarEmpresa(entityEmpresa));
         }
     }
 }

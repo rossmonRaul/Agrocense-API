@@ -33,15 +33,15 @@ namespace Agrosense.Service.DataAccess.StoredProcedures
                 throw;
             }
         }
-        public async Task<DtoRespuestaSP> InsertarEmpresa(EntityEmpresa entityEmpresa)
+        public async Task<DtoRespuestaSP> CrearEmpresa(EntityEmpresa entityEmpresa)
         {
             try
             {
 
 
                 Dictionary<string, object> data = new Dictionary<string, object>();
-                data.Add("@IdEmpresa", entityEmpresa.IdEmpresa);
-                string query = "";
+                data.Add("@Empresa", entityEmpresa.Nombre);
+                string query = "SPCrearEmpresa";
 
                 return await this.contextoBD.EjecutarSP(query, data);
             }
@@ -58,7 +58,8 @@ namespace Agrosense.Service.DataAccess.StoredProcedures
 
                 Dictionary<string, object> data = new Dictionary<string, object>();
                 data.Add("@IdEmpresa", entityEmpresa.IdEmpresa);
-                string query = "";
+                data.Add("@NuevoNombreEmpresa", entityEmpresa.Nombre);
+                string query = "SPActualizarEmpresa";
 
                 return await this.contextoBD.EjecutarSP(query, data);
             }
