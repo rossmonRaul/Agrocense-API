@@ -155,8 +155,6 @@ namespace Agrosense.Service.DataAccess.StoredProcedures
                 data.Add("@Correo", entityUsuario.Correo);
                 data.Add("@Contrasena", entityUsuario.Contrasena);
                 data.Add("@IdEmpresa", entityUsuario.idEmpresa);
-                data.Add("@IdFinca", entityUsuario.idFinca);
-                data.Add("@IdParcela", entityUsuario.idParcela);
                 string query = "SPGuardarUsuarioPorSuperUsuario";
 
                 return await this.contextoBD.EjecutarSP(query, data);

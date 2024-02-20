@@ -66,7 +66,7 @@ namespace AgrosenseService.Controllers
             return Json(await this.servicioUsuario.ValidarUsuario(entityUsuario));
         }
 
-        [HttpDelete]
+        [HttpPut]
         public async Task<JsonResult> EliminarUsuario(EntityUsuario entityUsuario)
         {
             return Json(await this.servicioUsuario.EliminarUsuario(entityUsuario));
