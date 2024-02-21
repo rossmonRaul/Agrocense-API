@@ -28,6 +28,10 @@ namespace Agrosense.Service.BusinessLogic.Servicios
         {
             return await this.repositorioUsuario.ObtenerUsuariosPorRol3(entityUsuario);
         }
+        public async Task<List<DtoUsuario>> ObtenerUsuariosPorIdEmpresa(EntityUsuario entityUsuario)
+        {
+            return await this.repositorioUsuario.ObtenerUsuariosPorIdEmpresa(entityUsuario);
+        }
         public async Task<List<DtoUsuario>> ObtenerUsuariosPorRol4()
         {
             return await this.repositorioUsuario.ObtenerUsuariosPorRol4();

@@ -65,6 +65,21 @@ namespace Agrosense.Service.DataAccess.StoredProcedures
                 throw;
             }
         }
+        public async Task<List<DtoUsuario>> ObtenerUsuariosPorIdEmpresa(EntityUsuario entityUsuario)
+        {
+            try
+            {
+                Dictionary<string, object> data = new Dictionary<string, object>();
+                data.Add("@IdEmpresa", entityUsuario.idEmpresa);
+                string query = "ObtenerUsuariosPorIdEmpresa";
+
+                return await this.contextoBD.ObtenerListaDeDatos<DtoUsuario>(query, data);
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
         //Agregar un usuario
         public async Task<DtoRespuestaSP> InsertarUsuario(EntityUsuario entityUsuario)
         {

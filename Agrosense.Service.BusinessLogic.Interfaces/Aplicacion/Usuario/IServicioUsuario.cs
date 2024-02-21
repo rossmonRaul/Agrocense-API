@@ -13,6 +13,7 @@ namespace Agrosense.Service.BusinessLogic.Interface.Aplicacion.Usuario
     {
         Task<List<DtoUsuarioAdminEmpresa>> ObtenerUsuariosPorRol2();
         Task<List<DtoUsuarioAsignado>> ObtenerUsuariosPorRol3(EntityUsuario entityUsuario);
+        Task<List<DtoUsuario>> ObtenerUsuariosPorIdEmpresa(EntityUsuario entityUsuario);
         Task<List<DtoUsuario>> ObtenerUsuariosPorRol4();
         Task<DtoUsuarioLogueado> ValidarUsuario(EntityUsuario entityUsuario);
         Task<DtoRespuestaSP> InsertarUsuario(EntityUsuario entityUsuario);

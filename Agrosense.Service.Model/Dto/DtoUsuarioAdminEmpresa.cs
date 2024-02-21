@@ -12,7 +12,7 @@ namespace Agrosense.Service.Model.Dto
         public string? Correo { get; set; }
         public string Contrasena { get; set; }
         public int idEmpresa { get; set; }
-        public string NombreEmpresa { get; set; }
+        public string Empresa { get; set; }
         public int Estado { get; set; }
     }
 }

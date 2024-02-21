@@ -14,6 +14,7 @@ namespace Agrosense.Service.DataAccess.Interface.Infraestructura
         Task<List<DtoUsuarioAdminEmpresa>> ObtenerUsuariosPorRol2();
         Task<List<DtoUsuarioAsignado>> ObtenerUsuariosPorRol3(EntityUsuario entityUsuario);
         Task<List<DtoUsuario>> ObtenerUsuariosPorRol4();
+        Task<List<DtoUsuario>> ObtenerUsuariosPorIdEmpresa(EntityUsuario entityUsuario);
         Task<DtoRespuestaSP> InsertarUsuario(EntityUsuario entityUsuario);
         Task<DtoRespuestaSP> ActualizarUsuario(EntityUsuario entityUsuario);
         Task<DtoRespuestaSP> ActualizarUsuarioAdministrador(EntityUsuario entityUsuario);

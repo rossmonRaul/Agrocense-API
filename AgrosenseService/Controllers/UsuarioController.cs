@@ -34,6 +34,11 @@ namespace AgrosenseService.Controllers
         {
             return Json(await this.servicioUsuario.ObtenerUsuariosPorRol3(entityUsuario));
         }
+        [HttpPost]
+        public async Task<JsonResult> ObtenerUsuariosPorIdEmpresa(EntityUsuario entityUsuario)
+        {
+            return Json(await this.servicioUsuario.ObtenerUsuariosPorIdEmpresa(entityUsuario));
+        }
         [HttpGet]
         public async Task<JsonResult> ObtenerUsuariosPorRol4()
         {
