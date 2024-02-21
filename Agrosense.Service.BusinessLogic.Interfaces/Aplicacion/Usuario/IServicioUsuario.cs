@@ -11,14 +11,14 @@ namespace Agrosense.Service.BusinessLogic.Interface.Aplicacion.Usuario
 {
     public interface IServicioUsuario
     {
-        Task<List<DtoUsuario>> ObtenerUsuariosPorRol2();
-        Task<List<DtoUsuario>> ObtenerUsuariosPorRol3(EntityUsuario entityUsuario);
+        Task<List<DtoUsuarioAdminEmpresa>> ObtenerUsuariosPorRol2();
+        Task<List<DtoUsuarioAsignado>> ObtenerUsuariosPorRol3(EntityUsuario entityUsuario);
         Task<List<DtoUsuario>> ObtenerUsuariosPorRol4();
         Task<DtoUsuarioLogueado> ValidarUsuario(EntityUsuario entityUsuario);
         Task<DtoRespuestaSP> InsertarUsuario(EntityUsuario entityUsuario);
         Task<DtoRespuestaSP> GuardarUsuarioPorSuperUsuario(EntityUsuario entityUsuario);
         Task<DtoRespuestaSP> ActualizarUsuario(EntityUsuario entityUsuario);
         Task<DtoRespuestaSP> ActualizarUsuarioAdministrador(EntityUsuario entityUsuario);
-        Task<DtoRespuestaSP> EliminarUsuario(EntityUsuario entityUsuario);
+        Task<DtoRespuestaSP> CambioEstadoUsuario(EntityUsuario entityUsuario);
     }
 }

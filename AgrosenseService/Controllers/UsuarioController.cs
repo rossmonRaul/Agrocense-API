@@ -67,9 +67,9 @@ namespace AgrosenseService.Controllers
         }
 
         [HttpPut]
-        public async Task<JsonResult> EliminarUsuario(EntityUsuario entityUsuario)
+        public async Task<JsonResult> CambioEstadoUsuario(EntityUsuario entityUsuario)
         {
-            return Json(await this.servicioUsuario.EliminarUsuario(entityUsuario));
+            return Json(await this.servicioUsuario.CambioEstadoUsuario(entityUsuario));
         }
 
     }

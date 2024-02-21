@@ -17,14 +17,14 @@ namespace Agrosense.Service.DataAccess.StoredProcedures
         {
             this.contextoBD = contextoBD;
         }
-
-        public async Task<List<DtoUsuario>> ObtenerUsuariosPorRol2()
+        //Obtener usuarios administradores de las empresas
+        public async Task<List<DtoUsuarioAdminEmpresa>> ObtenerUsuariosPorRol2()
         {
             try
             {
                 
                 string query = "ObtenerUsuariosPorRol2";
-                var result = await this.contextoBD.ObtenerListaDeDatos<DtoUsuario>(query);
+                var result = await this.contextoBD.ObtenerListaDeDatos<DtoUsuarioAdminEmpresa>(query);
 
                 return result;
             }
@@ -33,7 +33,8 @@ namespace Agrosense.Service.DataAccess.StoredProcedures
                 throw;
             }
         }
-        public async Task<List<DtoUsuario>> ObtenerUsuariosPorRol3(EntityUsuario entityUsuario)
+        //Obtener usuarios que ya estan asignados a empresa, finca y parcela
+        public async Task<List<DtoUsuarioAsignado>> ObtenerUsuariosPorRol3(EntityUsuario entityUsuario)
         {
             try
             {
@@ -41,13 +42,14 @@ namespace Agrosense.Service.DataAccess.StoredProcedures
                 data.Add("@IdEmpresa", entityUsuario.idEmpresa);
                 string query = "ObtenerUsuariosPorRol3";
 
-                return await this.contextoBD.ObtenerListaDeDatos<DtoUsuario>(query, data);
+                return await this.contextoBD.ObtenerListaDeDatos<DtoUsuarioAsignado>(query, data);
             }
             catch (Exception)
             {
                 throw;
             }
         }
+        //Obtener los usuarios sin asignar
         public async Task<List<DtoUsuario>> ObtenerUsuariosPorRol4()
         {
             try
@@ -63,6 +65,7 @@ namespace Agrosense.Service.DataAccess.StoredProcedures
                 throw;
             }
         }
+        //Agregar un usuario
         public async Task<DtoRespuestaSP> InsertarUsuario(EntityUsuario entityUsuario)
         {
             try
@@ -82,7 +85,7 @@ namespace Agrosense.Service.DataAccess.StoredProcedures
                 throw;
             }
         }
-
+        //Se actualiza los datos necesarios del usuario
         public async Task<DtoRespuestaSP> ActualizarUsuario(EntityUsuario entityUsuario)
         {
             try
@@ -96,6 +99,7 @@ namespace Agrosense.Service.DataAccess.StoredProcedures
                 data.Add("@IdParcela", entityUsuario.idParcela);
                 data.Add("@IdRol", entityUsuario.idRol);
                 data.Add("@Estado", entityUsuario.Estado);
+                data.Add("@NuevaContrasena", entityUsuario.Contrasena);
                 string query = "SPActualizarUsuario";
 
                 return await this.contextoBD.EjecutarSP(query, data);
@@ -105,7 +109,7 @@ namespace Agrosense.Service.DataAccess.StoredProcedures
                 throw;
             }
         }
-
+        //Se actualiza los datos de administrador
         public async Task<DtoRespuestaSP> ActualizarUsuarioAdministrador(EntityUsuario entityUsuario)
         {
             try
@@ -125,8 +129,8 @@ namespace Agrosense.Service.DataAccess.StoredProcedures
                 throw;
             }
         }
-
-        public async Task<DtoRespuestaSP> EliminarUsuario(EntityUsuario entityUsuario)
+        //Cambio del estado del usuario
+        public async Task<DtoRespuestaSP> CambioEstadoUsuario(EntityUsuario entityUsuario)
         {
             try
             {
@@ -134,7 +138,9 @@ namespace Agrosense.Service.DataAccess.StoredProcedures
 
                 Dictionary<string, object> data = new Dictionary<string, object>();
                 data.Add("@Identificacion", entityUsuario.Identificacion);
-                string query = "SPEliminarUsuario";
+                data.Add("@IdFinca", entityUsuario.idFinca);
+                data.Add("@IdParcela", entityUsuario.idParcela);
+                string query = "SPCambiarEstadoUsuario";
 
                 return await this.contextoBD.EjecutarSP(query, data);
             }
@@ -143,7 +149,7 @@ namespace Agrosense.Service.DataAccess.StoredProcedures
                 throw;
             }
         }
-
+        //Guardar o insertar Usuario Aministrador de Empresa
         public async Task<DtoRespuestaSP> GuardarUsuarioPorSuperUsuario(EntityUsuario entityUsuario)
         {
             try
@@ -164,7 +170,7 @@ namespace Agrosense.Service.DataAccess.StoredProcedures
                 throw;
             }
         }
-
+        //Validar el login por medio de usuarrio o correo con contraseña
         public async Task<DtoUsuarioLogueado> ValidarUsuario(EntityUsuario entityUsuario)
         {
             try
