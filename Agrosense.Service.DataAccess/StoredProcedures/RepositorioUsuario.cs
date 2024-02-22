@@ -303,7 +303,7 @@ namespace Agrosense.Service.DataAccess.StoredProcedures
                 throw;
             }
         }
-        //Validar el login por medio de usuarrio o correo con contraseña
+        //Validar el login por medio de usuario o correo con contraseña
         public async Task<DtoUsuarioLogueado> ValidarUsuario(EntityUsuario entityUsuario)
         {
             try
@@ -314,7 +314,7 @@ namespace Agrosense.Service.DataAccess.StoredProcedures
                 data.Add("@Usuario", entityUsuario.Identificacion);
                 data.Add("@Contrasena", entityUsuario.Contrasena);
                 
-                string query = "SPObtenerUsuarioPorUsuarioYContrasena";
+                string query = "SPValidarUsuario";
 
                 return await this.contextoBD.ObtenerDato<DtoUsuarioLogueado>(query, data);
             }
