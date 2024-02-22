@@ -74,7 +74,7 @@ namespace Agrosense.Service.BusinessLogic.Servicios
         }
         public async Task<DtoRespuestaSP> CambiarEstadoUsuario(EntityUsuario entityUsuario)
         {
-            return await this.repositorioUsuario.CambiarEstadoUsuarioFincaParcela(entityUsuario);
+            return await this.repositorioUsuario.CambiarEstadoUsuario(entityUsuario);
         }
         public async Task<DtoRespuestaSP> GuardarUsuarioPorSuperUsuario(EntityUsuario entityUsuario)
         {
