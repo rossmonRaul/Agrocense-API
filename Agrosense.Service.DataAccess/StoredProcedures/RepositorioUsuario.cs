@@ -124,6 +124,24 @@ namespace Agrosense.Service.DataAccess.StoredProcedures
                 throw;
             }
         }
+        public async Task<DtoRespuestaSP> ActualizarContrasenaUsuario(EntityUsuario entityUsuario)
+        {
+            try
+            {
+
+
+                Dictionary<string, object> data = new Dictionary<string, object>();
+                data.Add("@Identificacion", entityUsuario.Identificacion);
+                data.Add("@NuevaContrasena", entityUsuario.Contrasena);
+                string query = "SPActualizarContrasenaUsuario";
+
+                return await this.contextoBD.EjecutarSP(query, data);
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
         //Se actualiza los datos de administrador
         public async Task<DtoRespuestaSP> ActualizarUsuarioAdministrador(EntityUsuario entityUsuario)
         {
