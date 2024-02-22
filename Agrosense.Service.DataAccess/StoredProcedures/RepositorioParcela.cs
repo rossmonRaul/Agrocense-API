@@ -22,7 +22,7 @@ namespace Agrosense.Service.DataAccess.StoredProcedures
             try
             {
 
-                string query = "ObtenerParcelas";
+                string query = "SPObtenerParcelas";
                 var result = await this.contextoBD.ObtenerListaDeDatos<DtoParcela>(query);
 
                 return result;

@@ -22,7 +22,7 @@ namespace Agrosense.Service.DataAccess.StoredProcedures
             try
             {
 
-                string query = "ObtenerFincas";
+                string query = "SPObtenerFincas";
                 var result = await this.contextoBD.ObtenerListaDeDatos<DtoFinca>(query);
 
                 return result;

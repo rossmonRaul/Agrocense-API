@@ -23,7 +23,7 @@ namespace Agrosense.Service.DataAccess.StoredProcedures
             try
             {
                 
-                string query = "ObtenerUsuariosPorRol2";
+                string query = "SPObtenerUsuariosPorRol2";
                 var result = await this.contextoBD.ObtenerListaDeDatos<DtoUsuarioAdminEmpresa>(query);
 
                 return result;
@@ -33,16 +33,32 @@ namespace Agrosense.Service.DataAccess.StoredProcedures
                 throw;
             }
         }
-        //Obtener usuarios que ya estan asignados a empresa, finca y parcela
+        //Obtener usuarios que ya estan asignados a empresa
         public async Task<List<DtoUsuarioAsignado>> ObtenerUsuariosPorRol3(EntityUsuario entityUsuario)
         {
             try
             {
                 Dictionary<string, object> data = new Dictionary<string, object>();
                 data.Add("@IdEmpresa", entityUsuario.idEmpresa);
-                string query = "ObtenerUsuariosPorRol3";
+                string query = "SPObtenerUsuariosPorRol3";
 
                 return await this.contextoBD.ObtenerListaDeDatos<DtoUsuarioAsignado>(query, data);
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+        //Obtener usuarios que ya tienen empresa finca y parcela asignados
+        public async Task<List<DtoUsuario>> ObtenerUsuariosAsignadosEmpresa(EntityUsuario entityUsuario)
+        {
+            try
+            {
+                Dictionary<string, object> data = new Dictionary<string, object>();
+                data.Add("@IdEmpresa", entityUsuario.idEmpresa);
+                string query = "SPObtenerUsuariosAsignadosEmpresa";
+
+                return await this.contextoBD.ObtenerListaDeDatos<DtoUsuario>(query, data);
             }
             catch (Exception)
             {
@@ -55,7 +71,7 @@ namespace Agrosense.Service.DataAccess.StoredProcedures
             try
             {
                 
-                string query = "ObtenerUsuariosPorRol4";
+                string query = "SPObtenerUsuariosPorRol4";
                 var result = await this.contextoBD.ObtenerListaDeDatos<DtoUsuario>(query);
                 
                 return result;
@@ -65,13 +81,14 @@ namespace Agrosense.Service.DataAccess.StoredProcedures
                 throw;
             }
         }
+        //Se obtiene los usuarios con el id de la empresa que devuelve solo la indetificacion de los usuarios
         public async Task<List<DtoUsuario>> ObtenerUsuariosPorIdEmpresa(EntityUsuario entityUsuario)
         {
             try
             {
                 Dictionary<string, object> data = new Dictionary<string, object>();
                 data.Add("@IdEmpresa", entityUsuario.idEmpresa);
-                string query = "ObtenerUsuariosPorIdEmpresa";
+                string query = "SPObtenerUsuariosPorIdEmpresa";
 
                 return await this.contextoBD.ObtenerListaDeDatos<DtoUsuario>(query, data);
             }
@@ -81,7 +98,7 @@ namespace Agrosense.Service.DataAccess.StoredProcedures
             }
         }
         //Agregar un usuario
-        public async Task<DtoRespuestaSP> InsertarUsuario(EntityUsuario entityUsuario)
+        public async Task<DtoRespuestaSP> GuardarUsuario(EntityUsuario entityUsuario)
         {
             try
             {
@@ -100,8 +117,74 @@ namespace Agrosense.Service.DataAccess.StoredProcedures
                 throw;
             }
         }
-        //Se actualiza los datos necesarios del usuario
-        public async Task<DtoRespuestaSP> ActualizarUsuario(EntityUsuario entityUsuario)
+        //ESTOS SERVICIOS AUN NO SE ESTAN USANDO Se DOCUMENTAN POR SE LLEGAN A OCUPAR
+        //public async Task<DtoRespuestaSP> ActualizarUsuarioNOENUSO(EntityUsuario entityUsuario)
+        //{
+        //    try
+        //    {
+
+
+        //        Dictionary<string, object> data = new Dictionary<string, object>();
+        //        data.Add("@Identificacion", entityUsuario.Identificacion);
+        //        data.Add("@IdEmpresa", entityUsuario.idEmpresa);
+        //        data.Add("@IdRol", entityUsuario.idRol);
+        //        data.Add("@Estado", entityUsuario.Estado);
+        //        data.Add("@NuevaContrasena", entityUsuario.Contrasena);
+        //        string query = "SPActualizarUsuarioNOENUSO";
+
+        //        return await this.contextoBD.EjecutarSP(query, data);
+        //    }
+        //    catch (Exception)
+        //    {
+        //        throw;
+        //    }
+        //}
+        //public async Task<DtoRespuestaSP> ActualizarUsuarioSinEmpresa(EntityUsuario entityUsuario)
+        //{
+        //    try
+        //    {
+
+
+        //        Dictionary<string, object> data = new Dictionary<string, object>();
+        //        data.Add("@Identificacion", entityUsuario.Identificacion);
+        //        data.Add("@IdEmpresa", entityUsuario.idEmpresa);
+        //        data.Add("@IdFinca", entityUsuario.idFinca);
+        //        data.Add("@IdParcela", entityUsuario.idParcela);
+        //        data.Add("@IdRol", entityUsuario.idRol);
+        //        data.Add("@Estado", entityUsuario.Estado);
+        //        data.Add("@NuevaContrasena", entityUsuario.Contrasena);
+        //        string query = "SPActualizarUsuarioSinEmpresa";
+
+        //        return await this.contextoBD.EjecutarSP(query, data);
+        //    }
+        //    catch (Exception)
+        //    {
+        //        throw;
+        //    }
+        //}
+
+        /*Cambia el estado de usuario finca y parcela*/
+        public async Task<DtoRespuestaSP> CambiarEstadoUsuarioFincaParcela(EntityUsuario entityUsuario)
+        {
+            try
+            {
+
+
+                Dictionary<string, object> data = new Dictionary<string, object>();
+                data.Add("@UsuarioIdentificacion", entityUsuario.Identificacion);
+                data.Add("@IdFinca", entityUsuario.idFinca);
+                data.Add("@IdParcela", entityUsuario.idParcela);
+                string query = "SPCambiarEstadoUsuarioFincaParcela";
+
+                return await this.contextoBD.EjecutarSP(query, data);
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+        //Cambia el estado del usuario
+        public async Task<DtoRespuestaSP> CambiarEstadoUsuario(EntityUsuario entityUsuario)
         {
             try
             {
@@ -109,13 +192,28 @@ namespace Agrosense.Service.DataAccess.StoredProcedures
 
                 Dictionary<string, object> data = new Dictionary<string, object>();
                 data.Add("@Identificacion", entityUsuario.Identificacion);
-                data.Add("@IdEmpresa", entityUsuario.idEmpresa);
+                string query = "SPCambiarEstadoUsuario";
+
+                return await this.contextoBD.EjecutarSP(query, data);
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+        //Se usa para asignar las diferentes fincas y parcelas que puede tener el usuario
+        public async Task<DtoRespuestaSP> AsignarFincaParcela(EntityUsuario entityUsuario)
+        {
+            try
+            {
+
+
+                Dictionary<string, object> data = new Dictionary<string, object>();
+                data.Add("@IdUsuarioFincaParcela", entityUsuario.idUsuario);
+                data.Add("@Identificacion", entityUsuario.Identificacion);
                 data.Add("@IdFinca", entityUsuario.idFinca);
                 data.Add("@IdParcela", entityUsuario.idParcela);
-                data.Add("@IdRol", entityUsuario.idRol);
-                data.Add("@Estado", entityUsuario.Estado);
-                data.Add("@NuevaContrasena", entityUsuario.Contrasena);
-                string query = "SPActualizarUsuario";
+                string query = "SPAsignarFincaParcela";
 
                 return await this.contextoBD.EjecutarSP(query, data);
             }
@@ -142,7 +240,7 @@ namespace Agrosense.Service.DataAccess.StoredProcedures
                 throw;
             }
         }
-        //Se actualiza los datos de administrador
+        
         public async Task<DtoRespuestaSP> ActualizarUsuarioAdministrador(EntityUsuario entityUsuario)
         {
             try
@@ -162,8 +260,8 @@ namespace Agrosense.Service.DataAccess.StoredProcedures
                 throw;
             }
         }
-        //Cambio del estado del usuario
-        public async Task<DtoRespuestaSP> CambioEstadoUsuario(EntityUsuario entityUsuario)
+        //Se usa para poder asiganar tanto las empresa como las fincas y parcelas
+        public async Task<DtoRespuestaSP> AsignarEmpresaFincaYParcela(EntityUsuario entityUsuario)
         {
             try
             {
@@ -171,9 +269,10 @@ namespace Agrosense.Service.DataAccess.StoredProcedures
 
                 Dictionary<string, object> data = new Dictionary<string, object>();
                 data.Add("@Identificacion", entityUsuario.Identificacion);
+                data.Add("@IdEmpresa", entityUsuario.idEmpresa);
                 data.Add("@IdFinca", entityUsuario.idFinca);
                 data.Add("@IdParcela", entityUsuario.idParcela);
-                string query = "SPCambiarEstadoUsuario";
+                string query = "SPAsignarEmpresaFincaYParcela";
 
                 return await this.contextoBD.EjecutarSP(query, data);
             }
@@ -182,6 +281,7 @@ namespace Agrosense.Service.DataAccess.StoredProcedures
                 throw;
             }
         }
+        
         //Guardar o insertar Usuario Aministrador de Empresa
         public async Task<DtoRespuestaSP> GuardarUsuarioPorSuperUsuario(EntityUsuario entityUsuario)
         {

@@ -14,13 +14,18 @@ namespace Agrosense.Service.BusinessLogic.Interface.Aplicacion.Usuario
         Task<List<DtoUsuarioAdminEmpresa>> ObtenerUsuariosPorRol2();
         Task<List<DtoUsuarioAsignado>> ObtenerUsuariosPorRol3(EntityUsuario entityUsuario);
         Task<List<DtoUsuario>> ObtenerUsuariosPorIdEmpresa(EntityUsuario entityUsuario);
+        Task<List<DtoUsuario>> ObtenerUsuariosAsignadosEmpresa(EntityUsuario entityUsuario);
         Task<List<DtoUsuario>> ObtenerUsuariosPorRol4();
         Task<DtoUsuarioLogueado> ValidarUsuario(EntityUsuario entityUsuario);
-        Task<DtoRespuestaSP> InsertarUsuario(EntityUsuario entityUsuario);
+        Task<DtoRespuestaSP> GuardarUsuario(EntityUsuario entityUsuario);
         Task<DtoRespuestaSP> GuardarUsuarioPorSuperUsuario(EntityUsuario entityUsuario);
-        Task<DtoRespuestaSP> ActualizarUsuario(EntityUsuario entityUsuario);
+        //Task<DtoRespuestaSP> ActualizarUsuarioSinEmpresa(EntityUsuario entityUsuario);
+        //Task<DtoRespuestaSP> ActualizarUsuarioNOENUSO(EntityUsuario entityUsuario);
         Task<DtoRespuestaSP> ActualizarContrasenaUsuario(EntityUsuario entityUsuario);
         Task<DtoRespuestaSP> ActualizarUsuarioAdministrador(EntityUsuario entityUsuario);
-        Task<DtoRespuestaSP> CambioEstadoUsuario(EntityUsuario entityUsuario);
+        Task<DtoRespuestaSP> AsignarFincaParcela(EntityUsuario entityUsuario);
+        Task<DtoRespuestaSP> AsignarEmpresaFincaYParcela(EntityUsuario entityUsuario);
+        Task<DtoRespuestaSP> CambiarEstadoUsuarioFincaParcela(EntityUsuario entityUsuario);
+        Task<DtoRespuestaSP> CambiarEstadoUsuario(EntityUsuario entityUsuario);
     }
 }

@@ -39,6 +39,11 @@ namespace AgrosenseService.Controllers
         {
             return Json(await this.servicioUsuario.ObtenerUsuariosPorIdEmpresa(entityUsuario));
         }
+        [HttpPost]
+        public async Task<JsonResult> ObtenerUsuariosAsignadosEmpresa(EntityUsuario entityUsuario)
+        {
+            return Json(await this.servicioUsuario.ObtenerUsuariosAsignadosEmpresa(entityUsuario));
+        }
         [HttpGet]
         public async Task<JsonResult> ObtenerUsuariosPorRol4()
         {
@@ -46,20 +51,25 @@ namespace AgrosenseService.Controllers
         }
 
         [HttpPost]
-        public async Task<JsonResult> InsertarUsuario(EntityUsuario entityUsuario)
+        public async Task<JsonResult> GuardarUsuario(EntityUsuario entityUsuario)
         {
-            return Json(await this.servicioUsuario.InsertarUsuario(entityUsuario));
+            return Json(await this.servicioUsuario.GuardarUsuario(entityUsuario));
         }
         [HttpPost]
         public async Task<JsonResult> GuardarUsuarioPorSuperUsuario(EntityUsuario entityUsuario)
         {
             return Json(await this.servicioUsuario.GuardarUsuarioPorSuperUsuario(entityUsuario));
         }
-        [HttpPut]
-        public async Task<JsonResult> ActualizarUsuario(EntityUsuario entityUsuario)
-        {
-            return Json(await this.servicioUsuario.ActualizarUsuario(entityUsuario));
-        }
+        //[HttpPut]
+        //public async Task<JsonResult> ActualizarUsuarioNOENUSO(EntityUsuario entityUsuario)
+        //{
+        //    return Json(await this.servicioUsuario.ActualizarUsuarioNOENUSO(entityUsuario));
+        //}
+        //[HttpPut]
+        //public async Task<JsonResult> ActualizarUsuarioSinEmpresa(EntityUsuario entityUsuario)
+        //{
+        //    return Json(await this.servicioUsuario.ActualizarUsuarioSinEmpresa(entityUsuario));
+        //}
         [HttpPut]
         public async Task<JsonResult> ActualizarUsuarioAdministrador(EntityUsuario entityUsuario)
         {
@@ -70,6 +80,15 @@ namespace AgrosenseService.Controllers
         {
             return Json(await this.servicioUsuario.ActualizarContrasenaUsuario(entityUsuario));
         }
+        [HttpPut]
+        public async Task<JsonResult> AsignarFincaParcela(EntityUsuario entityUsuario)
+        {
+            return Json(await this.servicioUsuario.AsignarFincaParcela(entityUsuario));
+        }[HttpPut]
+        public async Task<JsonResult> AsignarEmpresaFincaYParcela(EntityUsuario entityUsuario)
+        {
+            return Json(await this.servicioUsuario.AsignarEmpresaFincaYParcela(entityUsuario));
+        }
         [HttpPost]
         public async Task<JsonResult> ValidarUsuario(EntityUsuario entityUsuario)
         {
@@ -77,9 +96,14 @@ namespace AgrosenseService.Controllers
         }
 
         [HttpPut]
-        public async Task<JsonResult> CambioEstadoUsuario(EntityUsuario entityUsuario)
+        public async Task<JsonResult> CambiarEstadoUsuarioFincaParcela(EntityUsuario entityUsuario)
         {
-            return Json(await this.servicioUsuario.CambioEstadoUsuario(entityUsuario));
+            return Json(await this.servicioUsuario.CambiarEstadoUsuarioFincaParcela(entityUsuario));
+        }
+        [HttpPut]
+        public async Task<JsonResult> CambiarEstadoUsuario(EntityUsuario entityUsuario)
+        {
+            return Json(await this.servicioUsuario.CambiarEstadoUsuario(entityUsuario));
         }
 
     }
