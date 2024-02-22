@@ -32,10 +32,7 @@ namespace Agrosense.Service.BusinessLogic.Servicios
         {
             return await this.repositorioUsuario.ObtenerUsuariosPorIdEmpresa(entityUsuario);
         }
-        public async Task<List<DtoUsuario>> ObtenerUsuariosAsignadosEmpresa(EntityUsuario entityUsuario)
-        {
-            return await this.repositorioUsuario.ObtenerUsuariosAsignadosEmpresa(entityUsuario);
-        }
+        
         public async Task<List<DtoUsuario>> ObtenerUsuariosPorRol4()
         {
             return await this.repositorioUsuario.ObtenerUsuariosPorRol4();
@@ -67,6 +64,10 @@ namespace Agrosense.Service.BusinessLogic.Servicios
         public async Task<DtoRespuestaSP> AsignarEmpresaFincaYParcela(EntityUsuario entityUsuario)
         {
             return await this.repositorioUsuario.AsignarEmpresaFincaYParcela(entityUsuario);
+        }
+        public async Task<DtoRespuestaSP> AsignarNuevaFincaParcela(EntityUsuario entityUsuario)
+        {
+            return await this.repositorioUsuario.AsignarNuevaFincaParcela(entityUsuario);
         }
         public async Task<DtoRespuestaSP> CambiarEstadoUsuarioFincaParcela(EntityUsuario entityUsuario)
         {

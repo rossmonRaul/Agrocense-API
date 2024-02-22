@@ -14,7 +14,6 @@ namespace Agrosense.Service.BusinessLogic.Interface.Aplicacion.Usuario
         Task<List<DtoUsuarioAdminEmpresa>> ObtenerUsuariosPorRol2();
         Task<List<DtoUsuarioAsignado>> ObtenerUsuariosPorRol3(EntityUsuario entityUsuario);
         Task<List<DtoUsuario>> ObtenerUsuariosPorIdEmpresa(EntityUsuario entityUsuario);
-        Task<List<DtoUsuario>> ObtenerUsuariosAsignadosEmpresa(EntityUsuario entityUsuario);
         Task<List<DtoUsuario>> ObtenerUsuariosPorRol4();
         Task<DtoUsuarioLogueado> ValidarUsuario(EntityUsuario entityUsuario);
         Task<DtoRespuestaSP> GuardarUsuario(EntityUsuario entityUsuario);
@@ -23,6 +22,7 @@ namespace Agrosense.Service.BusinessLogic.Interface.Aplicacion.Usuario
         //Task<DtoRespuestaSP> ActualizarUsuarioNOENUSO(EntityUsuario entityUsuario);
         Task<DtoRespuestaSP> ActualizarContrasenaUsuario(EntityUsuario entityUsuario);
         Task<DtoRespuestaSP> ActualizarUsuarioAdministrador(EntityUsuario entityUsuario);
+        Task<DtoRespuestaSP> AsignarNuevaFincaParcela(EntityUsuario entityUsuario);
         Task<DtoRespuestaSP> AsignarFincaParcela(EntityUsuario entityUsuario);
         Task<DtoRespuestaSP> AsignarEmpresaFincaYParcela(EntityUsuario entityUsuario);
         Task<DtoRespuestaSP> CambiarEstadoUsuarioFincaParcela(EntityUsuario entityUsuario);

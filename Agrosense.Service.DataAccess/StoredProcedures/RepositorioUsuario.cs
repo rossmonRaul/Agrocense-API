@@ -49,22 +49,7 @@ namespace Agrosense.Service.DataAccess.StoredProcedures
                 throw;
             }
         }
-        //Obtener usuarios que ya tienen empresa finca y parcela asignados
-        public async Task<List<DtoUsuario>> ObtenerUsuariosAsignadosEmpresa(EntityUsuario entityUsuario)
-        {
-            try
-            {
-                Dictionary<string, object> data = new Dictionary<string, object>();
-                data.Add("@IdEmpresa", entityUsuario.idEmpresa);
-                string query = "SPObtenerUsuariosAsignadosEmpresa";
-
-                return await this.contextoBD.ObtenerListaDeDatos<DtoUsuario>(query, data);
-            }
-            catch (Exception)
-            {
-                throw;
-            }
-        }
+        
         //Obtener los usuarios sin asignar
         public async Task<List<DtoUsuario>> ObtenerUsuariosPorRol4()
         {
@@ -252,6 +237,26 @@ namespace Agrosense.Service.DataAccess.StoredProcedures
                 data.Add("@IdEmpresa", entityUsuario.idEmpresa);
                 data.Add("@NuevaContrasena", entityUsuario.Contrasena);
                 string query = "SPActualizarUsuarioAdministrador";
+
+                return await this.contextoBD.EjecutarSP(query, data);
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+        public async Task<DtoRespuestaSP> AsignarNuevaFincaParcela (EntityUsuario entityUsuario)
+        {
+            try
+            {
+
+
+                Dictionary<string, object> data = new Dictionary<string, object>();
+                data.Add("@Identificacion", entityUsuario.Identificacion);
+                data.Add("@IdFinca", entityUsuario.idFinca);
+                data.Add("@IdParcela", entityUsuario.idParcela);
+                data.Add("@NuevaContrasena", entityUsuario.Contrasena);
+                string query = "SPAsignarNuevaFincaParcela";
 
                 return await this.contextoBD.EjecutarSP(query, data);
             }

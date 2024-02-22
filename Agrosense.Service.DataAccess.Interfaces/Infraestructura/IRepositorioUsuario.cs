@@ -15,11 +15,11 @@ namespace Agrosense.Service.DataAccess.Interface.Infraestructura
         Task<List<DtoUsuarioAsignado>> ObtenerUsuariosPorRol3(EntityUsuario entityUsuario);
         Task<List<DtoUsuario>> ObtenerUsuariosPorRol4();
         Task<List<DtoUsuario>> ObtenerUsuariosPorIdEmpresa(EntityUsuario entityUsuario);
-        Task<List<DtoUsuario>> ObtenerUsuariosAsignadosEmpresa(EntityUsuario entityUsuario);
         Task<DtoRespuestaSP> GuardarUsuario(EntityUsuario entityUsuario);
         //Task<DtoRespuestaSP> ActualizarUsuarioNOENUSO(EntityUsuario entityUsuario);
         //Task<DtoRespuestaSP> ActualizarUsuarioSinEmpresa(EntityUsuario entityUsuario);
         Task<DtoRespuestaSP> ActualizarUsuarioAdministrador(EntityUsuario entityUsuario);
+        Task<DtoRespuestaSP> AsignarNuevaFincaParcela(EntityUsuario entityUsuario);
         Task<DtoRespuestaSP> ActualizarContrasenaUsuario(EntityUsuario entityUsuario);
         Task<DtoRespuestaSP> AsignarEmpresaFincaYParcela(EntityUsuario entityUsuario);
         Task<DtoRespuestaSP> AsignarFincaParcela(EntityUsuario entityUsuario);
