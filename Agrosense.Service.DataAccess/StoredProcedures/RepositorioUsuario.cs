@@ -255,7 +255,6 @@ namespace Agrosense.Service.DataAccess.StoredProcedures
                 data.Add("@Identificacion", entityUsuario.Identificacion);
                 data.Add("@IdFinca", entityUsuario.idFinca);
                 data.Add("@IdParcela", entityUsuario.idParcela);
-                data.Add("@NuevaContrasena", entityUsuario.Contrasena);
                 string query = "SPAsignarNuevaFincaParcela";
 
                 return await this.contextoBD.EjecutarSP(query, data);
