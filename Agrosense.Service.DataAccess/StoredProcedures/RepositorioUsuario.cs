@@ -102,51 +102,7 @@ namespace Agrosense.Service.DataAccess.StoredProcedures
                 throw;
             }
         }
-        //ESTOS SERVICIOS AUN NO SE ESTAN USANDO Se DOCUMENTAN POR SE LLEGAN A OCUPAR
-        //public async Task<DtoRespuestaSP> ActualizarUsuarioNOENUSO(EntityUsuario entityUsuario)
-        //{
-        //    try
-        //    {
-
-
-        //        Dictionary<string, object> data = new Dictionary<string, object>();
-        //        data.Add("@Identificacion", entityUsuario.Identificacion);
-        //        data.Add("@IdEmpresa", entityUsuario.idEmpresa);
-        //        data.Add("@IdRol", entityUsuario.idRol);
-        //        data.Add("@Estado", entityUsuario.Estado);
-        //        data.Add("@NuevaContrasena", entityUsuario.Contrasena);
-        //        string query = "SPActualizarUsuarioNOENUSO";
-
-        //        return await this.contextoBD.EjecutarSP(query, data);
-        //    }
-        //    catch (Exception)
-        //    {
-        //        throw;
-        //    }
-        //}
-        //public async Task<DtoRespuestaSP> ActualizarUsuarioSinEmpresa(EntityUsuario entityUsuario)
-        //{
-        //    try
-        //    {
-
-
-        //        Dictionary<string, object> data = new Dictionary<string, object>();
-        //        data.Add("@Identificacion", entityUsuario.Identificacion);
-        //        data.Add("@IdEmpresa", entityUsuario.idEmpresa);
-        //        data.Add("@IdFinca", entityUsuario.idFinca);
-        //        data.Add("@IdParcela", entityUsuario.idParcela);
-        //        data.Add("@IdRol", entityUsuario.idRol);
-        //        data.Add("@Estado", entityUsuario.Estado);
-        //        data.Add("@NuevaContrasena", entityUsuario.Contrasena);
-        //        string query = "SPActualizarUsuarioSinEmpresa";
-
-        //        return await this.contextoBD.EjecutarSP(query, data);
-        //    }
-        //    catch (Exception)
-        //    {
-        //        throw;
-        //    }
-        //}
+        
 
         /*Cambia el estado de usuario finca y parcela*/
         public async Task<DtoRespuestaSP> CambiarEstadoUsuarioFincaParcela(EntityUsuario entityUsuario)
