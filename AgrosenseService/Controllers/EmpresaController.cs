@@ -33,5 +33,10 @@ namespace Agrosense.Service.Controllers
         {
             return Json(await this.servicioEmpresa.ActualizarEmpresa(entityEmpresa));
         }
+        [HttpPut]
+        public async Task<JsonResult> CambiarEstadoEmpresa(EntityEmpresa entityEmpresa)
+        {
+            return Json(await this.servicioEmpresa.CambiarEstadoEmpresa(entityEmpresa));
+        }
     }
 }

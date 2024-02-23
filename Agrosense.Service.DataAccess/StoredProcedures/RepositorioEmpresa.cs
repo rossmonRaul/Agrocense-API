@@ -68,5 +68,22 @@ namespace Agrosense.Service.DataAccess.StoredProcedures
                 throw;
             }
         }
+        public async Task<DtoRespuestaSP> CambiarEstadoEmpresa(EntityEmpresa entityEmpresa)
+        {
+            try
+            {
+
+
+                Dictionary<string, object> data = new Dictionary<string, object>();
+                data.Add("@IdEmpresa", entityEmpresa.IdEmpresa);
+                string query = "SPCambiarEstadoEmpresa";
+
+                return await this.contextoBD.EjecutarSP(query, data);
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
     }
 }

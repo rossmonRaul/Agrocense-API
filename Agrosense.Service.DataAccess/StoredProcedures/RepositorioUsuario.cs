@@ -186,6 +186,7 @@ namespace Agrosense.Service.DataAccess.StoredProcedures
                 throw;
             }
         }
+        
         //Se usa para asignar las diferentes fincas y parcelas que puede tener el usuario
         public async Task<DtoRespuestaSP> AsignarFincaParcela(EntityUsuario entityUsuario)
         {

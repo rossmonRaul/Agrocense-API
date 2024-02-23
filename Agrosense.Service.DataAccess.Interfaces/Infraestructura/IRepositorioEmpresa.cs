@@ -13,5 +13,7 @@ namespace Agrosense.Service.DataAccess.Interface.Infraestructura
         Task<List<DtoEmpresa>> ObtenerEmpresas();
         Task<DtoRespuestaSP> CrearEmpresa(EntityEmpresa entityEmpresa);
         Task<DtoRespuestaSP> ActualizarEmpresa(EntityEmpresa entityEmpresa);
+        Task<DtoRespuestaSP> CambiarEstadoEmpresa(EntityEmpresa entityEmpresa);
+
     }
 }

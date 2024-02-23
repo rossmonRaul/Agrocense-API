@@ -27,5 +27,6 @@ namespace Agrosense.Service.BusinessLogic.Interface.Aplicacion.Usuario
         Task<DtoRespuestaSP> AsignarEmpresaFincaYParcela(EntityUsuario entityUsuario);
         Task<DtoRespuestaSP> CambiarEstadoUsuarioFincaParcela(EntityUsuario entityUsuario);
         Task<DtoRespuestaSP> CambiarEstadoUsuario(EntityUsuario entityUsuario);
+        
     }
 }

@@ -31,5 +31,9 @@ namespace Agrosense.Service.BusinessLogic.Servicios
         {
             return await this.repositorioEmpresa.ActualizarEmpresa(entityEmpresa);
         }
+        public async Task<DtoRespuestaSP> CambiarEstadoEmpresa(EntityEmpresa entityEmpresa)
+        {
+            return await this.repositorioEmpresa.CambiarEstadoEmpresa(entityEmpresa);
+        }
     }
 }
