@@ -10,6 +10,6 @@ namespace Agrosense.Service.Model.Entity
     {
         public int IdEmpresa { get; set; }
 
-        public string Nombre { get; set; }
+        public string? Nombre { get; set; }
     }
 }
