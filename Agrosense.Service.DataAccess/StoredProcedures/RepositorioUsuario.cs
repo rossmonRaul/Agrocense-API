@@ -82,6 +82,22 @@ namespace Agrosense.Service.DataAccess.StoredProcedures
                 throw;
             }
         }
+        //Se obtiene los usuarios asignados
+        public async Task<List<DtoUsuarioAsignado>> ObtenerUsuariosAsignadosPorIdentificacion(EntityUsuario entityUsuario)
+        {
+            try
+            {
+                Dictionary<string, object> data = new Dictionary<string, object>();
+                data.Add("@Identificacion", entityUsuario.Identificacion);
+                string query = "SPObtenerFincasParcelasPorIdentificacion";
+
+                return await this.contextoBD.ObtenerListaDeDatos<DtoUsuarioAsignado>(query, data);
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
         //Agregar un usuario
         public async Task<DtoRespuestaSP> GuardarUsuario(EntityUsuario entityUsuario)
         {
