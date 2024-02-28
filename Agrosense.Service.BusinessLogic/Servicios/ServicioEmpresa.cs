@@ -23,5 +23,17 @@ namespace Agrosense.Service.BusinessLogic.Servicios
         {
             return await this.repositorioEmpresa.ObtenerEmpresas();
         }
+        public async Task<DtoRespuestaSP> CrearEmpresa(EntityEmpresa entityEmpresa)
+        {
+            return await this.repositorioEmpresa.CrearEmpresa(entityEmpresa);
+        }
+        public async Task<DtoRespuestaSP> ActualizarEmpresa(EntityEmpresa entityEmpresa)
+        {
+            return await this.repositorioEmpresa.ActualizarEmpresa(entityEmpresa);
+        }
+        public async Task<DtoRespuestaSP> CambiarEstadoEmpresa(EntityEmpresa entityEmpresa)
+        {
+            return await this.repositorioEmpresa.CambiarEstadoEmpresa(entityEmpresa);
+        }
     }
 }

@@ -1,4 +1,5 @@
 ﻿using Agrosense.Service.BusinessLogic.Interface.Aplicacion.Empresa;
+using Agrosense.Service.Model.Entity;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Agrosense.Service.Controllers
@@ -21,6 +22,21 @@ namespace Agrosense.Service.Controllers
         public async Task<JsonResult> ObtenerEmpresas()
         {
             return Json(await this.servicioEmpresa.ObtenerEmpresas());
+        }
+        [HttpPost]
+        public async Task<JsonResult> CrearEmpresa(EntityEmpresa entityEmpresa)
+        {
+            return Json(await this.servicioEmpresa.CrearEmpresa(entityEmpresa));
+        }
+        [HttpPut]
+        public async Task<JsonResult> ActualizarEmpresa(EntityEmpresa entityEmpresa)
+        {
+            return Json(await this.servicioEmpresa.ActualizarEmpresa(entityEmpresa));
+        }
+        [HttpPut]
+        public async Task<JsonResult> CambiarEstadoEmpresa(EntityEmpresa entityEmpresa)
+        {
+            return Json(await this.servicioEmpresa.CambiarEstadoEmpresa(entityEmpresa));
         }
     }
 }

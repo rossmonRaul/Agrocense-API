@@ -4,18 +4,20 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Agrosense.Service.Model.Entity
+namespace Agrosense.Service.Model.Dto
 {
-    public class EntityUsuario
+    public class DtoUsuarioAsignado
     {
-        public int idUsuario { get; set; }
-        public  string? Identificacion { get; set; }
+        public string Identificacion { get; set; }
         public string? Correo { get; set; }
-        public string? Contrasena { get; set; }
         public int idRol { get; set; }
         public int idEmpresa { get; set; }
         public int idFinca { get; set; }
         public int idParcela { get; set; }
+        public int idUsuarioFincaParcela { get; set; }
+        public string? Empresa { get; set; }
         public int Estado { get; set; }
+        public string? NombreFinca { get; set; }
+        public string? NombreParcela { get; set; }
     }
 }

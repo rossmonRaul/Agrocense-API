@@ -20,14 +20,68 @@ namespace Agrosense.Service.BusinessLogic.Servicios
             this.repositorioUsuario = repositorioUsuario;
         }
 
-        public async Task<List<DtoUsuario>> ObtenerUsuarios()
+        public async Task<List<DtoUsuarioAdminEmpresa>> ObtenerUsuariosPorRol2()
         {
-            return await this.repositorioUsuario.ObtenerUsuarios();
+            return await this.repositorioUsuario.ObtenerUsuariosPorRol2();
+        }
+        public async Task<List<DtoUsuarioAsignado>> ObtenerUsuariosPorRol3(EntityUsuario entityUsuario)
+        {
+            return await this.repositorioUsuario.ObtenerUsuariosPorRol3(entityUsuario);
+        }
+        public async Task<List<DtoUsuario>> ObtenerUsuariosPorIdEmpresa(EntityUsuario entityUsuario)
+        {
+            return await this.repositorioUsuario.ObtenerUsuariosPorIdEmpresa(entityUsuario);
+        }
+        public async Task<List<DtoUsuarioAsignado>> ObtenerUsuariosAsignadosPorIdentificacion(EntityUsuario entityUsuario)
+        {
+            return await this.repositorioUsuario.ObtenerUsuariosAsignadosPorIdentificacion(entityUsuario);
+        }
+        
+        public async Task<List<DtoUsuario>> ObtenerUsuariosPorRol4()
+        {
+            return await this.repositorioUsuario.ObtenerUsuariosPorRol4();
         }
 
-        public async Task<DtoRespuestaSP> InsertarUsuario(EntityUsuario entityUsuario)
+        public async Task<DtoRespuestaSP> GuardarUsuario(EntityUsuario entityUsuario)
         {
-            return await this.repositorioUsuario.InsertarUsuario(entityUsuario);
+            return await this.repositorioUsuario.GuardarUsuario(entityUsuario);
+        }
+        
+        public async Task<DtoRespuestaSP> ActualizarContrasenaUsuario(EntityUsuario entityUsuario)
+        {
+            return await this.repositorioUsuario.ActualizarContrasenaUsuario(entityUsuario);
+        }
+        public async Task<DtoRespuestaSP> ActualizarUsuarioAdministrador(EntityUsuario entityUsuario)
+        {
+            return await this.repositorioUsuario.ActualizarUsuarioAdministrador(entityUsuario);
+        } 
+        public async Task<DtoRespuestaSP> AsignarFincaParcela(EntityUsuario entityUsuario)
+        {
+            return await this.repositorioUsuario.AsignarFincaParcela(entityUsuario);
+        }
+        public async Task<DtoRespuestaSP> AsignarEmpresaFincaYParcela(EntityUsuario entityUsuario)
+        {
+            return await this.repositorioUsuario.AsignarEmpresaFincaYParcela(entityUsuario);
+        }
+        public async Task<DtoRespuestaSP> AsignarNuevaFincaParcela(EntityUsuario entityUsuario)
+        {
+            return await this.repositorioUsuario.AsignarNuevaFincaParcela(entityUsuario);
+        }
+        public async Task<DtoRespuestaSP> CambiarEstadoUsuarioFincaParcela(EntityUsuario entityUsuario)
+        {
+            return await this.repositorioUsuario.CambiarEstadoUsuarioFincaParcela(entityUsuario);
+        }
+        public async Task<DtoRespuestaSP> CambiarEstadoUsuario(EntityUsuario entityUsuario)
+        {
+            return await this.repositorioUsuario.CambiarEstadoUsuario(entityUsuario);
+        }
+        public async Task<DtoRespuestaSP> GuardarUsuarioPorSuperUsuario(EntityUsuario entityUsuario)
+        {
+            return await this.repositorioUsuario.GuardarUsuarioPorSuperUsuario(entityUsuario);
+        }
+        public async Task<DtoUsuarioLogueado> ValidarUsuario(EntityUsuario entityUsuario)
+        {
+            return await this.repositorioUsuario.ValidarUsuario(entityUsuario);
         }
     }
 }

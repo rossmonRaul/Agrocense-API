@@ -1,5 +1,6 @@
 ﻿using Agrosense.Service.DataAccess.Interface.Infraestructura;
 using Agrosense.Service.Model.Dto;
+using Agrosense.Service.Model.Entity;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -22,10 +23,62 @@ namespace Agrosense.Service.DataAccess.StoredProcedures
             try
             {
                 
-                string query = "ObtenerEmpresas";
+                string query = "SPObtenerEmpresas";
                 var result = await this.contextoBD.ObtenerListaDeDatos<DtoEmpresa>(query);
                 
                 return result;
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+        public async Task<DtoRespuestaSP> CrearEmpresa(EntityEmpresa entityEmpresa)
+        {
+            try
+            {
+
+
+                Dictionary<string, object> data = new Dictionary<string, object>();
+                data.Add("@Empresa", entityEmpresa.Nombre);
+                string query = "SPCrearEmpresa";
+
+                return await this.contextoBD.EjecutarSP(query, data);
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+        public async Task<DtoRespuestaSP> ActualizarEmpresa(EntityEmpresa entityEmpresa)
+        {
+            try
+            {
+
+
+                Dictionary<string, object> data = new Dictionary<string, object>();
+                data.Add("@IdEmpresa", entityEmpresa.IdEmpresa);
+                data.Add("@NuevoNombreEmpresa", entityEmpresa.Nombre);
+                string query = "SPActualizarEmpresa";
+
+                return await this.contextoBD.EjecutarSP(query, data);
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+        public async Task<DtoRespuestaSP> CambiarEstadoEmpresa(EntityEmpresa entityEmpresa)
+        {
+            try
+            {
+
+
+                Dictionary<string, object> data = new Dictionary<string, object>();
+                data.Add("@IdEmpresa", entityEmpresa.IdEmpresa);
+                string query = "SPCambiarEstadoEmpresa";
+
+                return await this.contextoBD.EjecutarSP(query, data);
             }
             catch (Exception)
             {
