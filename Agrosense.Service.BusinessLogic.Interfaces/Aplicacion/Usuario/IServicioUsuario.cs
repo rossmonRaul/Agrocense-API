@@ -19,7 +19,7 @@ namespace Agrosense.Service.BusinessLogic.Interface.Aplicacion.Usuario
         Task<DtoUsuarioLogueado> ValidarUsuario(EntityUsuario entityUsuario);
         Task<DtoRespuestaSP> GuardarUsuario(EntityUsuario entityUsuario);
         Task<DtoRespuestaSP> GuardarUsuarioPorSuperUsuario(EntityUsuario entityUsuario);
-        Task<DtoRespuestaSP> ActualizarContrasenaUsuario(EntityUsuario entityUsuario);
+        Task<DtoRespuestaSP> ActualizarDatosUsuario(EntityUsuario entityUsuario);
         Task<DtoRespuestaSP> ActualizarUsuarioAdministrador(EntityUsuario entityUsuario);
         Task<DtoRespuestaSP> AsignarNuevaFincaParcela(EntityUsuario entityUsuario);
         Task<DtoRespuestaSP> AsignarFincaParcela(EntityUsuario entityUsuario);

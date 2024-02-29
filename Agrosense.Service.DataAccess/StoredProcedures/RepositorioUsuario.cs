@@ -66,6 +66,7 @@ namespace Agrosense.Service.DataAccess.StoredProcedures
                 throw;
             }
         }
+
         //Se obtiene los usuarios con el id de la empresa que devuelve solo la indetificacion de los usuarios
         public async Task<List<DtoUsuario>> ObtenerUsuariosPorIdEmpresa(EntityUsuario entityUsuario)
         {
@@ -109,6 +110,7 @@ namespace Agrosense.Service.DataAccess.StoredProcedures
                 data.Add("@Identificacion", entityUsuario.Identificacion);
                 data.Add("@Correo", entityUsuario.Correo);
                 data.Add("@Contrasena", entityUsuario.Contrasena);
+                data.Add("@Nombre", entityUsuario.Nombre);
                 string query = "SPGuardarUsuario";
 
                 return await this.contextoBD.EjecutarSP(query, data);
@@ -180,7 +182,7 @@ namespace Agrosense.Service.DataAccess.StoredProcedures
                 throw;
             }
         }
-        public async Task<DtoRespuestaSP> ActualizarContrasenaUsuario(EntityUsuario entityUsuario)
+        public async Task<DtoRespuestaSP> ActualizarDatosUsuario(EntityUsuario entityUsuario)
         {
             try
             {
@@ -188,8 +190,10 @@ namespace Agrosense.Service.DataAccess.StoredProcedures
 
                 Dictionary<string, object> data = new Dictionary<string, object>();
                 data.Add("@Identificacion", entityUsuario.Identificacion);
+                data.Add("@NuevoNombre", entityUsuario.Nombre);
+                data.Add("@NuevoCorreo", entityUsuario.Correo);
                 data.Add("@NuevaContrasena", entityUsuario.Contrasena);
-                string query = "SPActualizarContrasenaUsuario";
+                string query = "SPActualizarDatosUsuario";
 
                 return await this.contextoBD.EjecutarSP(query, data);
             }
@@ -208,6 +212,8 @@ namespace Agrosense.Service.DataAccess.StoredProcedures
                 Dictionary<string, object> data = new Dictionary<string, object>();
                 data.Add("@Identificacion", entityUsuario.Identificacion);
                 data.Add("@IdEmpresa", entityUsuario.idEmpresa);
+                data.Add("@NuevoNombre", entityUsuario.Nombre);
+                data.Add("@NuevoCorreo", entityUsuario.Correo);
                 data.Add("@NuevaContrasena", entityUsuario.Contrasena);
                 string query = "SPActualizarUsuarioAdministrador";
 
@@ -271,6 +277,7 @@ namespace Agrosense.Service.DataAccess.StoredProcedures
                 data.Add("@Correo", entityUsuario.Correo);
                 data.Add("@Contrasena", entityUsuario.Contrasena);
                 data.Add("@IdEmpresa", entityUsuario.idEmpresa);
+                data.Add("@IdEmpresa", entityUsuario.Nombre);
                 string query = "SPGuardarUsuarioPorSuperUsuario";
 
                 return await this.contextoBD.EjecutarSP(query, data);
