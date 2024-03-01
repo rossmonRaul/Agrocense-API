@@ -108,9 +108,12 @@ namespace Agrosense.Service.DataAccess.StoredProcedures
 
                 Dictionary<string, object> data = new Dictionary<string, object>();
                 data.Add("@Identificacion", entityUsuario.Identificacion);
+                data.Add("@Nombre", entityUsuario.Nombre);
                 data.Add("@Correo", entityUsuario.Correo);
                 data.Add("@Contrasena", entityUsuario.Contrasena);
-                data.Add("@Nombre", entityUsuario.Nombre);
+                data.Add("@IdEmpresa", entityUsuario.idEmpresa);
+                data.Add("@IdFinca", entityUsuario.idFinca);
+                data.Add("@IdParcela", entityUsuario.idParcela);
                 string query = "SPGuardarUsuario";
 
                 return await this.contextoBD.EjecutarSP(query, data);
