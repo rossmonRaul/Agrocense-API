@@ -9,8 +9,8 @@ namespace Agrosense.Service.Model.Dto
     public class DtoParcela
     {
         public int IdParcela { get; set; }
-        public string Nombre { get; set; }
-
+        public string? Nombre { get; set; }
+        public int Estado { get; set; }
         public int IdFinca { get; set; }
     }
 }

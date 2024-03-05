@@ -1,4 +1,5 @@
 ﻿using Agrosense.Service.BusinessLogic.Interface.Aplicacion.Finca;
+using Agrosense.Service.Model.Entity;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Agrosense.Service.Controllers
@@ -20,6 +21,21 @@ namespace Agrosense.Service.Controllers
         public async Task<JsonResult> ObtenerFincas()
         {
             return Json(await this.servicioFinca.ObtenerFincas());
+        }
+        [HttpPost]
+        public async Task<JsonResult> CrearFinca(EntityFinca entityFinca)
+        {
+            return Json(await this.servicioFinca.CrearFinca(entityFinca));
+        }
+        [HttpPut]
+        public async Task<JsonResult> ActualizarFinca(EntityFinca entityFinca)
+        {
+            return Json(await this.servicioFinca.ActualizarFinca(entityFinca));
+        }
+        [HttpPut]
+        public async Task<JsonResult> CambiarEstadoFinca(EntityFinca entityFinca)
+        {
+            return Json(await this.servicioFinca.CambiarEstadoFinca(entityFinca));
         }
     }
 }
