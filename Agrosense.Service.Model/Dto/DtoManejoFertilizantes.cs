@@ -11,7 +11,7 @@ namespace Agrosense.Service.Model.Dto
         public int IdManejoFertilizantes{ get; set; }
         public int IdFinca { get; set; }
         public int IdParcela { get; set; }
-        public string? FechaCreacion { get; set; }
+        public string? Fecha { get; set; }
         public string? Fertilizante { get; set; }
         public string? Aplicacion { get; set; }
         public float Dosis { get; set; }
