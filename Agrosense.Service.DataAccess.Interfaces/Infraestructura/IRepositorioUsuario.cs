@@ -19,7 +19,7 @@ namespace Agrosense.Service.DataAccess.Interface.Infraestructura
         Task<DtoRespuestaSP> GuardarUsuario(EntityUsuario entityUsuario);
         Task<DtoRespuestaSP> ActualizarUsuarioAdministrador(EntityUsuario entityUsuario);
         Task<DtoRespuestaSP> AsignarNuevaFincaParcela(EntityUsuario entityUsuario);
-        Task<DtoRespuestaSP> ActualizarContrasenaUsuario(EntityUsuario entityUsuario);
+        Task<DtoRespuestaSP> ActualizarDatosUsuario(EntityUsuario entityUsuario);
         Task<DtoRespuestaSP> AsignarEmpresaFincaYParcela(EntityUsuario entityUsuario);
         Task<DtoRespuestaSP> AsignarFincaParcela(EntityUsuario entityUsuario);
         Task<DtoRespuestaSP> CambiarEstadoUsuarioFincaParcela(EntityUsuario entityUsuario);

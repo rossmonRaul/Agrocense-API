@@ -9,6 +9,7 @@ namespace Agrosense.Service.Model.Dto
     public class DtoUsuarioAsignado
     {
         public string Identificacion { get; set; }
+        public string? Nombre { get; set; }
         public string? Correo { get; set; }
         public int idRol { get; set; }
         public int idEmpresa { get; set; }

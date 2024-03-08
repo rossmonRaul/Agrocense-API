@@ -9,8 +9,7 @@ namespace Agrosense.Service.Model.Entity
     public class EntityFinca
     {
         public int IdFinca { get; set; }
-        public string Nombre { get; set; }
-
+        public string? Nombre { get; set; }
         public int IdEmpresa { get; set; }
     }
 }

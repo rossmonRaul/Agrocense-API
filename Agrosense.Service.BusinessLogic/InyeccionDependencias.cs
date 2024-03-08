@@ -12,6 +12,7 @@ using Microsoft.Extensions.DependencyInjection;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using Agrosense.Service.BusinessLogic.Interface.Aplicacion.Fertilizantes;
 
 
 namespace Agrosense.Service.BusinessLogic
@@ -25,6 +26,7 @@ namespace Agrosense.Service.BusinessLogic
             services.AddScoped<IServicioEmpresa, ServicioEmpresa>();
             services.AddScoped<IServicioFinca, ServicioFinca>();
             services.AddScoped<IServicioParcela, ServicioParcela>();
+            services.AddScoped<IServicioManejoFertilizantes, ServicioManejoFertilizantes>();
             return services;
         }
     }

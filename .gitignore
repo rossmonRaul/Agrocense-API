@@ -31,6 +31,7 @@ packages/
 *.sqlite3
 *.bak
 
+
 # Carpeta de resultados de pruebas
 TestResults/
 
