@@ -32,5 +32,10 @@ namespace Agrosense.Service.BusinessLogic.Servicios
         {
             return await this.repositorioManejoFertilizantes.ActualizarManejoFertilizantes(entityManejoFertilizantes);
         }
+
+        public async Task<DtoRespuestaSP> CambiarEstadoManejoFertilizantes(EntityManejoFertilizantes entityManejoFertilizantes)
+        {
+            return await this.repositorioManejoFertilizantes.CambiarEstadoManejoFertilizantes(entityManejoFertilizantes);
+        }
     }
 }

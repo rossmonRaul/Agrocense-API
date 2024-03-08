@@ -37,5 +37,11 @@ namespace Agrosense.Service.Controllers
             return Json(await this.servicioManejoFertilizantes.ActualizarManejoFertilizantes(entityManejoFertilizantes));
         }
 
+        [HttpPut]
+        public async Task<JsonResult> CambiarEstadoManejoFertilizantes(EntityManejoFertilizantes entityManejoFertilizantes)
+        {
+            return Json(await this.servicioManejoFertilizantes.CambiarEstadoManejoFertilizantes(entityManejoFertilizantes));
+        }
+
     }
 }

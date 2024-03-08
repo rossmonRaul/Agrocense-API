@@ -13,5 +13,6 @@ namespace Agrosense.Service.BusinessLogic.Interface.Aplicacion.Fertilizantes
         Task<List<DtoManejoFertilizantes>> ObtenerManejoFertilizantes();
         Task<DtoRespuestaSP> InsertarManejoFertilizantes(EntityManejoFertilizantes entityManejoFertilizanteso);
         Task<DtoRespuestaSP> ActualizarManejoFertilizantes(EntityManejoFertilizantes entityManejoFertilizantes);
+        Task<DtoRespuestaSP> CambiarEstadoManejoFertilizantes(EntityManejoFertilizantes entityManejoFertilizantes);
     }
 }

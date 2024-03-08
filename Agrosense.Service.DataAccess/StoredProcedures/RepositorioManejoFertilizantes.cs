@@ -85,5 +85,21 @@ namespace Agrosense.Service.DataAccess.StoredProcedures
             }
         }
 
+        public async Task<DtoRespuestaSP> CambiarEstadoManejoFertilizantes(EntityManejoFertilizantes entityManejoFertilizantes)
+        {
+            try
+            {
+                Dictionary<string, object> data = new Dictionary<string, object>();
+                data.Add("@IdManejoFertilizantes", entityManejoFertilizantes.IdManejoFertilizantes);
+                string query = "SPCambiarManejoFertlizante";
+
+                return await this.contextoBD.EjecutarSP(query, data);
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+
     }
 }
