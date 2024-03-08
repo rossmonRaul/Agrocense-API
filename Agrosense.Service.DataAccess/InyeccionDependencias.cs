@@ -24,6 +24,7 @@ namespace Agrosense.Service.DataAccess
             services.AddScoped<IRepositorioEmpresa, RepositorioEmpresa>();
             services.AddScoped<IRepositorioFinca, RepositorioFinca>();
             services.AddScoped<IRepositorioParcela, RepositorioParcela>();
+            services.AddScoped<IRepositorioManejoFertilizantes, RepositorioManejoFertilizantes>();
 
             return services;
         }
