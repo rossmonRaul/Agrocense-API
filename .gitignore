@@ -31,9 +31,6 @@ packages/
 *.sqlite3
 *.bak
 
-# Ignorar appsettings
-appsettings.json
-appsettings.Development.json
 
 # Carpeta de resultados de pruebas
 TestResults/
