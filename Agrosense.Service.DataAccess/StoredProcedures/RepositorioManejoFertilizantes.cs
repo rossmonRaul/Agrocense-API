@@ -74,6 +74,8 @@ namespace Agrosense.Service.DataAccess.StoredProcedures
                 data.Add("@Observaciones", entityManejoFertilizantes.Observaciones);
                 data.Add("@AccionesAdicionales ", entityManejoFertilizantes.AccionesAdicionales);
                 data.Add("@CondicionesAmbientales ", entityManejoFertilizantes.CondicionesAmbientales);
+                data.Add("@IdFinca ", entityManejoFertilizantes.IdFinca);
+                data.Add("@IdParcela ", entityManejoFertilizantes.IdParcela);
 
                 string query = "SPModificarManejoFertilizantes";
 
