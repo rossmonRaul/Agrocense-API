@@ -22,7 +22,7 @@ namespace Agrosense.Service.Model.Entity
         public string? Observaciones { get; set; }
         public decimal CalidadAgua { get; set; }
         public string? IdentificacionUsuario { get; set; }
-        public int IdFinca { get; set; }
-        public int IdParcela { get; set; }
+        public int? IdFinca { get; set; }
+        public int? IdParcela { get; set; }
     }
 }
