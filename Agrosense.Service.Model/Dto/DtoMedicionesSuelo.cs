@@ -25,5 +25,7 @@ namespace Agrosense.Service.Model.Dto
         public string Finca { get; set; }
         public string Parcela { get; set; }
         public int Estado { get; set; }
+        public string? IdentificacionUsuario { get; set; }
+        public string? FechaCreacion { get; set; }
     }
 }
