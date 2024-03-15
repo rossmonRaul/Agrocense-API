@@ -1,5 +1,6 @@
 ﻿using Agrosense.Service.BusinessLogic.Interface.Aplicacion.Cultivos;
 using Agrosense.Service.BusinessLogic.Interface.Aplicacion.Empresa;
+using Agrosense.Service.Model.Dto;
 using Agrosense.Service.Model.Entity;
 using Microsoft.AspNetCore.Mvc;
 
@@ -19,6 +20,28 @@ namespace Agrosense.Service.Controllers
             this.servicioCultivos = servicioCultivos;
         }
 
-       
+        [HttpGet]
+        public async Task<JsonResult> ObtenerCalidadCultivo()
+        {
+            return Json(await this.servicioCultivos.ObtenerCalidadCultivo());
+        }
+
+        [HttpPost]
+        public async Task<JsonResult> CrearCalidadCultivo(EntityCalidadCultivo entityCalidadCultivo)
+        {
+            return Json(await this.servicioCultivos.CrearCalidadCultivo(entityCalidadCultivo));
+        }
+
+        [HttpPut]
+        public async Task<JsonResult> ActualizarCalidadCultivo(EntityCalidadCultivo entityCalidadCultivo)
+        {
+            return Json(await this.servicioCultivos.ActualizarCalidadCultivo(entityCalidadCultivo));
+        }
+
+        [HttpPut]
+        public async Task<JsonResult> CambiarEstadoCalidadCultivo(EntityCalidadCultivo entityCalidadCultivo)
+        {
+            return Json(await this.servicioCultivos.CambiarEstadoCalidadCultivo(entityCalidadCultivo));
+        }
     }
 }
