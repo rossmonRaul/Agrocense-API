@@ -30,7 +30,7 @@ namespace Agrosense.Service.BusinessLogic
             services.AddScoped<IServicioParcela, ServicioParcela>();
             services.AddScoped<IServicioManejoFertilizantes, ServicioManejoFertilizantes>();
             services.AddScoped<IServicioMedicionesSuelo, ServicioMedicionesSuelo>();
-            services.AddScoped<IServicioCultivos, ServicioCutivos>();
+            services.AddScoped<IServicioCultivos, ServicioCultivos>();
 
             return services;
         }
