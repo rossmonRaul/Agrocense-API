@@ -13,6 +13,9 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using Agrosense.Service.BusinessLogic.Interface.Aplicacion.Fertilizantes;
+using Agrosense.Service.BusinessLogic.Interface.Aplicacion.Suelo;
+using Agrosense.Service.BusinessLogic.Interface.Aplicacion.Cultivos;
+using Agrosense.Service.BusinessLogic.Interface.Aplicacion.PreparacionTerreno;
 
 
 namespace Agrosense.Service.BusinessLogic
@@ -27,6 +30,10 @@ namespace Agrosense.Service.BusinessLogic
             services.AddScoped<IServicioFinca, ServicioFinca>();
             services.AddScoped<IServicioParcela, ServicioParcela>();
             services.AddScoped<IServicioManejoFertilizantes, ServicioManejoFertilizantes>();
+            services.AddScoped<IServicioMedicionesSuelo, ServicioMedicionesSuelo>();
+            services.AddScoped<IServicioCultivos, ServicioCultivos>();
+            services.AddScoped<IServicioPreparacionTerreno, ServicioPreparacionTerreno>();
+
             return services;
         }
     }
