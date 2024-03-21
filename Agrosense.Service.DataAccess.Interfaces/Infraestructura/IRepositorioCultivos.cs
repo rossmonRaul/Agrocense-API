@@ -11,8 +11,12 @@ namespace Agrosense.Service.DataAccess.Interface.Infraestructura
     public interface IRepositorioCultivos
     {
         Task<List<DtoCalidadCultivo>> ObtenerCalidadCultivo();
+        Task<List<DtoRotacionCultivos>> ObtenerRotacionCultivoSegunEstacionalidad();
         Task<DtoRespuestaSP> CrearCalidadCultivo(EntityCalidadCultivo entityCalidadCultivo);
+        Task<DtoRespuestaSP> InsertarRotacionCultivoSegunEstacionalidad(EntityRotacionCultivos entityRotacionCultivos);
         Task<DtoRespuestaSP> ActualizarCalidadCultivo(EntityCalidadCultivo entityCalidadCultivo);
+        Task<DtoRespuestaSP> ModificarRotacionCultivoSegunEstacionalidad(EntityRotacionCultivos entityRotacionCultivos);
         Task<DtoRespuestaSP> CambiarEstadoCalidadCultivo(EntityCalidadCultivo entityCalidadCultivo);
+        Task<DtoRespuestaSP> CambiarEstadoRotacionCultivo(EntityRotacionCultivos entityRotacionCultivos);
     }
 }

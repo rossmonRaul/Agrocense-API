@@ -11,6 +11,7 @@ namespace Agrosense.Service.Model.Entity
         public int? IdRotacionCultivoSegunEstacionalidad { get; set; }
         public int IdFinca { get; set; }
         public int IdParcela { get; set; }
+        public string? IdentificacionUsuario { get; set; }
         public string? Cultivo { get; set; }
         public string? EpocaSiembra { get; set; }
         public string? TiempoCosecha { get; set; }
