@@ -21,9 +21,9 @@ namespace Agrosense.Service.Controllers
         }
 
         [HttpGet]
-        public async Task<JsonResult> ObtenerCalidadCultivo()
+        public async Task<JsonResult> ObtenerProductividadCultivo()
         {
-            return Json(await this.servicioCultivos.ObtenerCalidadCultivo());
+            return Json(await this.servicioCultivos.ObtenerProductividadCultivo());
         }
 
         [HttpGet]
@@ -33,9 +33,9 @@ namespace Agrosense.Service.Controllers
         }
 
         [HttpPost]
-        public async Task<JsonResult> CrearCalidadCultivo(EntityCalidadCultivo entityCalidadCultivo)
+        public async Task<JsonResult> CrearProductividadCultivo(EntityProductividadCultivo entityProductividadCultivo)
         {
-            return Json(await this.servicioCultivos.CrearCalidadCultivo(entityCalidadCultivo));
+            return Json(await this.servicioCultivos.CrearProductividadCultivo(entityProductividadCultivo));
         }
         [HttpPost]
         public async Task<JsonResult> InsertarRotacionCultivoSegunEstacionalidad(EntityRotacionCultivos entityRotacionCultivos)
@@ -45,9 +45,9 @@ namespace Agrosense.Service.Controllers
 
 
         [HttpPut]
-        public async Task<JsonResult> ActualizarCalidadCultivo(EntityCalidadCultivo entityCalidadCultivo)
+        public async Task<JsonResult> ActualizarProductividadCultivo(EntityProductividadCultivo entityProductividadCultivo)
         {
-            return Json(await this.servicioCultivos.ActualizarCalidadCultivo(entityCalidadCultivo));
+            return Json(await this.servicioCultivos.ActualizarProductividadCultivo(entityProductividadCultivo));
         }
 
 
@@ -58,9 +58,9 @@ namespace Agrosense.Service.Controllers
         }
 
         [HttpPut]
-        public async Task<JsonResult> CambiarEstadoCalidadCultivo(EntityCalidadCultivo entityCalidadCultivo)
+        public async Task<JsonResult> CambiarEstadoProductividadCultivo(EntityProductividadCultivo entityProductividadCultivo)
         {
-            return Json(await this.servicioCultivos.CambiarEstadoCalidadCultivo(entityCalidadCultivo));
+            return Json(await this.servicioCultivos.CambiarEstadoProductividadCultivo(entityProductividadCultivo));
         }
         [HttpPut]
         public async Task<JsonResult> CambiarEstadoRotacionCultivo(EntityRotacionCultivos entityRotacionCultivos)
