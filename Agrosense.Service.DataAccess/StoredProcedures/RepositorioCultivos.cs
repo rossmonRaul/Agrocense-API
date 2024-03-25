@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace Agrosense.Service.DataAccess.StoredProcedures
 {
-    public class RepositorioCultivos:IRepositorioCultivos
+    public class RepositorioCultivos : IRepositorioCultivos
     {
         private readonly IContextoBD contextoBD;
 
@@ -34,6 +34,23 @@ namespace Agrosense.Service.DataAccess.StoredProcedures
             }
         }
         public async Task<DtoRespuestaSP> CrearProductividadCultivo(EntityProductividadCultivo entityProductividadCultivo)
+        public async Task<List<DtoRotacionCultivos>> ObtenerRotacionCultivoSegunEstacionalidad()
+        {
+            try
+            {
+
+                string query = "SPObtenerRotacionCultivoSegunEstacionalidad";
+                var result = await this.contextoBD.ObtenerListaDeDatos<DtoRotacionCultivos>(query);
+
+                return result;
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+
+        public async Task<DtoRespuestaSP> CrearCalidadCultivo(EntityCalidadCultivo entityCalidadCultivo)
         {
             try
             {
@@ -60,6 +77,31 @@ namespace Agrosense.Service.DataAccess.StoredProcedures
             }
         }
         public async Task<DtoRespuestaSP> ActualizarProductividadCultivo(EntityProductividadCultivo entityProductividadCultivo)
+        public async Task<DtoRespuestaSP> InsertarRotacionCultivoSegunEstacionalidad(EntityRotacionCultivos entityRotacionCultivos)
+        {
+            try
+            {
+
+
+                Dictionary<string, object> data = new Dictionary<string, object>();
+                data.Add("@IdFinca", entityRotacionCultivos.IdFinca);
+                data.Add("@IdParcela", entityRotacionCultivos.IdParcela);
+                data.Add("@IdentificacionUsuario", entityRotacionCultivos.IdentificacionUsuario);
+                data.Add("@Cultivo", entityRotacionCultivos.Cultivo);
+                data.Add("@EpocaSiembra", entityRotacionCultivos.EpocaSiembra);
+                data.Add("@TiempoCosecha", entityRotacionCultivos.TiempoCosecha);
+                data.Add("@CultivoSiguiente", entityRotacionCultivos.CultivoSiguiente);
+                data.Add("@EpocaSiembraCultivoSiguiente", entityRotacionCultivos.EpocaSiembraCultivoSiguiente);
+                string query = "SPInsertarRotacionCultivoSegunEstacionalidad";
+
+                return await this.contextoBD.EjecutarSP(query, data);
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+        public async Task<DtoRespuestaSP> ActualizarCalidadCultivo(EntityCalidadCultivo entityCalidadCultivo)
         {
             try
             {
@@ -85,6 +127,32 @@ namespace Agrosense.Service.DataAccess.StoredProcedures
                 throw;
             }
         }
+        public async Task<DtoRespuestaSP> ModificarRotacionCultivoSegunEstacionalidad(EntityRotacionCultivos entityRotacionCultivos)
+        {
+            try
+            {
+
+
+                Dictionary<string, object> data = new Dictionary<string, object>();
+                data.Add("@IdRotacionCultivoSegunEstacionalidad", entityRotacionCultivos.IdRotacionCultivoSegunEstacionalidad);
+                data.Add("@IdFinca", entityRotacionCultivos.IdFinca);
+                data.Add("@IdParcela", entityRotacionCultivos.IdParcela);
+                data.Add("@IdentificacionUsuario", entityRotacionCultivos.IdentificacionUsuario);
+                data.Add("@Cultivo", entityRotacionCultivos.Cultivo);
+                data.Add("@EpocaSiembra", entityRotacionCultivos.EpocaSiembra);
+                data.Add("@TiempoCosecha", entityRotacionCultivos.TiempoCosecha);
+                data.Add("@CultivoSiguiente", entityRotacionCultivos.CultivoSiguiente);
+                data.Add("@EpocaSiembraCultivoSiguiente", entityRotacionCultivos.EpocaSiembraCultivoSiguiente);
+
+                string query = "SPModificarRotacionCultivoSegunEstacionalidad";
+
+                return await this.contextoBD.EjecutarSP(query, data);
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
 
         public async Task<DtoRespuestaSP> CambiarEstadoProductividadCultivo(EntityProductividadCultivo entityProductividadCultivo)
         {
@@ -93,6 +161,23 @@ namespace Agrosense.Service.DataAccess.StoredProcedures
                 Dictionary<string, object> data = new Dictionary<string, object>();
                 data.Add("@IdManejoProductividadCultivo", entityProductividadCultivo.IdManejoProductividadCultivo);
                 string query = "SPCambiarEstadoProductividadCultivo";
+
+                return await this.contextoBD.EjecutarSP(query, data);
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+        public async Task<DtoRespuestaSP> CambiarEstadoRotacionCultivo(EntityRotacionCultivos entityRotacionCultivos)
+        {
+            try
+            {
+
+
+                Dictionary<string, object> data = new Dictionary<string, object>();
+                data.Add("@IdRotacionCultivoSegunEstacionalidad", entityRotacionCultivos.IdRotacionCultivoSegunEstacionalidad);
+                string query = "SPCambiarEstadoRotacionCultivo";
 
                 return await this.contextoBD.EjecutarSP(query, data);
             }
