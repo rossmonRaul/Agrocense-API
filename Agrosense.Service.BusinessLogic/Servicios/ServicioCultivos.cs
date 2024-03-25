@@ -19,21 +19,21 @@ namespace Agrosense.Service.BusinessLogic.Servicios
             this.repositorioCultivos = repositorioCultivos;
         }
 
-        public async Task<List<DtoCalidadCultivo>> ObtenerCalidadCultivo()
+        public async Task<List<DtoProductividadCultivo>> ObtenerProductividadCultivo()
         {
-            return await this.repositorioCultivos.ObtenerCalidadCultivo();
+            return await this.repositorioCultivos.ObtenerProductividadCultivo();
         }
-        public async Task<DtoRespuestaSP> CrearCalidadCultivo(EntityCalidadCultivo entityCalidadCultivo)
+        public async Task<DtoRespuestaSP> CrearProductividadCultivo(EntityProductividadCultivo entityProductividadCultivo)
         {
-            return await this.repositorioCultivos.CrearCalidadCultivo(entityCalidadCultivo);
+            return await this.repositorioCultivos.CrearProductividadCultivo(entityProductividadCultivo);
         }
-        public async Task<DtoRespuestaSP> ActualizarCalidadCultivo(EntityCalidadCultivo entityCalidadCultivo)
+        public async Task<DtoRespuestaSP> ActualizarProductividadCultivo(EntityProductividadCultivo entityProductividadCultivo)
         {
-            return await this.repositorioCultivos.ActualizarCalidadCultivo(entityCalidadCultivo);
+            return await this.repositorioCultivos.ActualizarProductividadCultivo(entityProductividadCultivo);
         }
-        public async Task<DtoRespuestaSP> CambiarEstadoCalidadCultivo(EntityCalidadCultivo entityCalidadCultivo)
+        public async Task<DtoRespuestaSP> CambiarEstadoProductividadCultivo(EntityProductividadCultivo entityProductividadCultivo)
         {
-            return await this.repositorioCultivos.CambiarEstadoCalidadCultivo(entityCalidadCultivo);
+            return await this.repositorioCultivos.CambiarEstadoProductividadCultivo(entityProductividadCultivo);
         }
 
     }

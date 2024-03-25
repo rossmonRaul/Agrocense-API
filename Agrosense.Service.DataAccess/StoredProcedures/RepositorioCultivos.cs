@@ -18,13 +18,13 @@ namespace Agrosense.Service.DataAccess.StoredProcedures
             this.contextoBD = contextoBD;
         }
 
-        public async Task<List<DtoCalidadCultivo>> ObtenerCalidadCultivo()
+        public async Task<List<DtoProductividadCultivo>> ObtenerProductividadCultivo()
         {
             try
             {
 
-                string query = "SPObtenerCalidadCultivo";
-                var result = await this.contextoBD.ObtenerListaDeDatos<DtoCalidadCultivo>(query);
+                string query = "SPObtenerProductividadCultivo";
+                var result = await this.contextoBD.ObtenerListaDeDatos<DtoProductividadCultivo>(query);
 
                 return result;
             }
@@ -33,26 +33,24 @@ namespace Agrosense.Service.DataAccess.StoredProcedures
                 throw;
             }
         }
-        public async Task<DtoRespuestaSP> CrearCalidadCultivo(EntityCalidadCultivo entityCalidadCultivo)
+        public async Task<DtoRespuestaSP> CrearProductividadCultivo(EntityProductividadCultivo entityProductividadCultivo)
         {
             try
             {
 
 
                 Dictionary<string, object> data = new Dictionary<string, object>();
-                data.Add("@UsuarioCreacion", entityCalidadCultivo.UsuarioCreacionModificacion);
-                data.Add("@IdFinca", entityCalidadCultivo.IdFinca);
-                data.Add("@IdParcela", entityCalidadCultivo.IdParcela);
-                data.Add("@FechaCreacion", entityCalidadCultivo.FechaCreacion);
-                data.Add("@Cultivo", entityCalidadCultivo.Cultivo);
-                data.Add("@Hora", entityCalidadCultivo.Hora);
-                data.Add("@Lote", entityCalidadCultivo.Lote);
-                data.Add("@PesoTotal", entityCalidadCultivo.PesoTotal);
-                data.Add("@PesoPromedio", entityCalidadCultivo.PesoPromedio);
-                data.Add("@Calidad", entityCalidadCultivo.Calidad);
-                data.Add("@Observaciones", entityCalidadCultivo.Observaciones);
+                data.Add("@UsuarioCreacion", entityProductividadCultivo.Usuario);
+                data.Add("@IdFinca", entityProductividadCultivo.IdFinca);
+                data.Add("@IdParcela", entityProductividadCultivo.IdParcela);
+                data.Add("@Cultivo", entityProductividadCultivo.Cultivo);
+                data.Add("@Temporada", entityProductividadCultivo.Temporada);
+                data.Add("@Area", entityProductividadCultivo.Area);
+                data.Add("@Produccion", entityProductividadCultivo.Produccion);
+                data.Add("@Productividad", entityProductividadCultivo.Produccion);
 
-                string query = "SPCrearCalidadCultivo";
+
+                string query = "SPCrearProductividadCultivo";
 
                 return await this.contextoBD.EjecutarSP(query, data);
             }
@@ -61,27 +59,24 @@ namespace Agrosense.Service.DataAccess.StoredProcedures
                 throw;
             }
         }
-        public async Task<DtoRespuestaSP> ActualizarCalidadCultivo(EntityCalidadCultivo entityCalidadCultivo)
+        public async Task<DtoRespuestaSP> ActualizarProductividadCultivo(EntityProductividadCultivo entityProductividadCultivo)
         {
             try
             {
 
 
                 Dictionary<string, object> data = new Dictionary<string, object>();
-                data.Add("@UsuarioModificacion", entityCalidadCultivo.UsuarioCreacionModificacion);
-                data.Add("@IdManejoCalidadCultivo", entityCalidadCultivo.IdManejoCalidadCultivo);
-                data.Add("@IdFinca", entityCalidadCultivo.IdFinca);
-                data.Add("@IdParcela", entityCalidadCultivo.IdParcela);
-                data.Add("@FechaCreacion", entityCalidadCultivo.FechaCreacion);
-                data.Add("@Cultivo", entityCalidadCultivo.Cultivo);
-                data.Add("@Hora", entityCalidadCultivo.Hora);
-                data.Add("@Lote", entityCalidadCultivo.Lote);
-                data.Add("@PesoTotal", entityCalidadCultivo.PesoTotal);
-                data.Add("@PesoPromedio", entityCalidadCultivo.PesoPromedio);
-                data.Add("@Calidad", entityCalidadCultivo.Calidad);
-                data.Add("@Observaciones", entityCalidadCultivo.Observaciones);
+                data.Add("@UsuarioModificacion", entityProductividadCultivo.Usuario);
+                data.Add("@IdManejoProductividadCultivo", entityProductividadCultivo.IdManejoProductividadCultivo);
+                data.Add("@IdFinca", entityProductividadCultivo.IdFinca);
+                data.Add("@IdParcela", entityProductividadCultivo.IdParcela);
+                data.Add("@Cultivo", entityProductividadCultivo.Cultivo);
+                data.Add("@Temporada", entityProductividadCultivo.Temporada);
+                data.Add("@Area", entityProductividadCultivo.Area);
+                data.Add("@Produccion", entityProductividadCultivo.Produccion);
+                data.Add("@Productividad", entityProductividadCultivo.Produccion);
 
-                string query = "SPActualizarCalidadCultivo";
+                string query = "SPActualizarProductividadCultivo";
 
                 return await this.contextoBD.EjecutarSP(query, data);
             }
@@ -91,15 +86,13 @@ namespace Agrosense.Service.DataAccess.StoredProcedures
             }
         }
 
-        public async Task<DtoRespuestaSP> CambiarEstadoCalidadCultivo(EntityCalidadCultivo entityCalidadCultivo)
+        public async Task<DtoRespuestaSP> CambiarEstadoProductividadCultivo(EntityProductividadCultivo entityProductividadCultivo)
         {
             try
             {
-
-
                 Dictionary<string, object> data = new Dictionary<string, object>();
-                data.Add("@IdManejoCalidadCultivo", entityCalidadCultivo.IdManejoCalidadCultivo);
-                string query = "SPCambiarEstadoCalidadCultivo";
+                data.Add("@IdManejoProductividadCultivo", entityProductividadCultivo.IdManejoProductividadCultivo);
+                string query = "SPCambiarEstadoProductividadCultivo";
 
                 return await this.contextoBD.EjecutarSP(query, data);
             }
