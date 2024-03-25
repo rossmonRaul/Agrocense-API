@@ -26,11 +26,23 @@ namespace Agrosense.Service.Controllers
             return Json(await this.servicioCultivos.ObtenerCalidadCultivo());
         }
 
+        [HttpGet]
+        public async Task<JsonResult> ObtenerRotacionCultivoSegunEstacionalidad()
+        {
+            return Json(await this.servicioCultivos.ObtenerRotacionCultivoSegunEstacionalidad());
+        }
+
         [HttpPost]
         public async Task<JsonResult> CrearCalidadCultivo(EntityCalidadCultivo entityCalidadCultivo)
         {
             return Json(await this.servicioCultivos.CrearCalidadCultivo(entityCalidadCultivo));
         }
+        [HttpPost]
+        public async Task<JsonResult> InsertarRotacionCultivoSegunEstacionalidad(EntityRotacionCultivos entityRotacionCultivos)
+        {
+            return Json(await this.servicioCultivos.InsertarRotacionCultivoSegunEstacionalidad(entityRotacionCultivos));
+        }
+
 
         [HttpPut]
         public async Task<JsonResult> ActualizarCalidadCultivo(EntityCalidadCultivo entityCalidadCultivo)
@@ -38,10 +50,22 @@ namespace Agrosense.Service.Controllers
             return Json(await this.servicioCultivos.ActualizarCalidadCultivo(entityCalidadCultivo));
         }
 
+
+        [HttpPut]
+        public async Task<JsonResult> ModificarRotacionCultivoSegunEstacionalidad(EntityRotacionCultivos entityRotacionCultivos)
+        {
+            return Json(await this.servicioCultivos.ModificarRotacionCultivoSegunEstacionalidad(entityRotacionCultivos));
+        }
+
         [HttpPut]
         public async Task<JsonResult> CambiarEstadoCalidadCultivo(EntityCalidadCultivo entityCalidadCultivo)
         {
             return Json(await this.servicioCultivos.CambiarEstadoCalidadCultivo(entityCalidadCultivo));
+        }
+        [HttpPut]
+        public async Task<JsonResult> CambiarEstadoRotacionCultivo(EntityRotacionCultivos entityRotacionCultivos)
+        {
+            return Json(await this.servicioCultivos.CambiarEstadoRotacionCultivo(entityRotacionCultivos));
         }
     }
 }

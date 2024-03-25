@@ -7,7 +7,7 @@ using Microsoft.Extensions.Configuration;
 using Agrosense.Service.DataAccess.StoredProcedures;
 using Microsoft.Extensions.DependencyInjection;
 using Agrosense.Service.DataAccess.Interface.Infraestructura;
-
+using Agrosense.Service.BusinessLogic.Interface.Aplicacion.UsoAgua;
 
 namespace Agrosense.Service.DataAccess
 {
@@ -27,6 +27,8 @@ namespace Agrosense.Service.DataAccess
             services.AddScoped<IRepositorioManejoFertilizantes, RepositorioManejoFertilizantes>();
             services.AddScoped<IRepositorioMedicionesSuelo, RepositorioMedicionesSuelo>();
             services.AddScoped<IRepositorioCultivos, RepositorioCultivos>();
+            services.AddScoped<IRepositorioPreparacionTerreno, RepositorioPreparacionTerreno>();
+            services.AddScoped<IRepositorioUsoAgua, RepositorioUsoAgua>();
             services.AddScoped<IRepositorioManejoResiduos, RepositorioManejoResiduos>();
 
             return services;

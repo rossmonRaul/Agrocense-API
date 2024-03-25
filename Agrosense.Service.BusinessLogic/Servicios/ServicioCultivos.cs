@@ -23,17 +23,33 @@ namespace Agrosense.Service.BusinessLogic.Servicios
         {
             return await this.repositorioCultivos.ObtenerCalidadCultivo();
         }
+        public async Task<List<DtoRotacionCultivos>> ObtenerRotacionCultivoSegunEstacionalidad()
+        {
+            return await this.repositorioCultivos.ObtenerRotacionCultivoSegunEstacionalidad();
+        }
         public async Task<DtoRespuestaSP> CrearCalidadCultivo(EntityCalidadCultivo entityCalidadCultivo)
         {
             return await this.repositorioCultivos.CrearCalidadCultivo(entityCalidadCultivo);
+        }
+        public async Task<DtoRespuestaSP> InsertarRotacionCultivoSegunEstacionalidad(EntityRotacionCultivos entityRotacionCultivos)
+        {
+            return await this.repositorioCultivos.InsertarRotacionCultivoSegunEstacionalidad(entityRotacionCultivos);
         }
         public async Task<DtoRespuestaSP> ActualizarCalidadCultivo(EntityCalidadCultivo entityCalidadCultivo)
         {
             return await this.repositorioCultivos.ActualizarCalidadCultivo(entityCalidadCultivo);
         }
+        public async Task<DtoRespuestaSP> ModificarRotacionCultivoSegunEstacionalidad(EntityRotacionCultivos entityRotacionCultivos)
+        {
+            return await this.repositorioCultivos.ModificarRotacionCultivoSegunEstacionalidad(entityRotacionCultivos);
+        }
         public async Task<DtoRespuestaSP> CambiarEstadoCalidadCultivo(EntityCalidadCultivo entityCalidadCultivo)
         {
             return await this.repositorioCultivos.CambiarEstadoCalidadCultivo(entityCalidadCultivo);
+        }
+        public async Task<DtoRespuestaSP> CambiarEstadoRotacionCultivo(EntityRotacionCultivos entityRotacionCultivos)
+        {
+            return await this.repositorioCultivos.CambiarEstadoRotacionCultivo(entityRotacionCultivos);
         }
 
     }
