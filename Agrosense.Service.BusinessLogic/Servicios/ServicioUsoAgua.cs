@@ -38,5 +38,47 @@ namespace Agrosense.Service.BusinessLogic.Servicios
             return await this.repositorioUsoAgua.CrearRegistroSeguimientoUsoAgua(entityUsoAgua);
         }
 
+        //Eficiencia Riego
+        public async Task<List<DtoUsoAgua>> ObtenerEficienciaRiego()
+        {
+            return await this.repositorioUsoAgua.ObtenerEficienciaRiego();
+        }
+
+        public async Task<DtoRespuestaSP> ActualizarRegistroEficienciaRiego(EntityEficienciaRiego entityEficienciaRiego)
+        {
+            return await this.repositorioUsoAgua.ActualizarRegistroEficienciaRiego(entityEficienciaRiego);
+        }
+
+        public async Task<DtoRespuestaSP> CambiarEstadoRegistroEficienciaRiego(EntityEficienciaRiego entityEficienciaRiego)
+        {
+            return await this.repositorioUsoAgua.CambiarEstadoRegistroEficienciaRiego(entityEficienciaRiego);
+        }
+
+        public async Task<DtoRespuestaSP> CrearRegistroEficienciaRiego(EntityEficienciaRiego entityEficienciaRiego)
+        {
+            return await this.repositorioUsoAgua.CrearRegistroEficienciaRiego(entityEficienciaRiego);
+        }
+
+        //Eficiencia  Conductividad Electrica Estres Hidrico
+
+        public async Task<List<DtoUsoAgua>> ObtenerConductividadElectricaEstresHidrico()
+        {
+            return await this.repositorioUsoAgua.ObtenerConductividadElectricaEstresHidrico();
+        }
+
+        public async Task<DtoRespuestaSP> ActualizarRegistroConductividadElectricaEstresHidrico(EntityConductividadElectricaEstresHidrico entityConductividadElectricaEstresHidrico)
+        {
+            return await this.repositorioUsoAgua.ActualizarRegistroConductividadElectricaEstresHidrico(entityConductividadElectricaEstresHidrico);
+        }
+
+        public async Task<DtoRespuestaSP> CambiarEstadoRegistroConductividadElectricaEstresHidrico(EntityConductividadElectricaEstresHidrico entityConductividadElectricaEstresHidrico)
+        {
+            return await this.repositorioUsoAgua.CambiarEstadoRegistroConductividadElectricaEstresHidrico(entityConductividadElectricaEstresHidrico);
+        }
+
+        public async Task<DtoRespuestaSP> CrearRegistroConductividadElectricaEstresHidrico(EntityConductividadElectricaEstresHidrico entityConductividadElectricaEstresHidrico)
+        {
+            return await this.repositorioUsoAgua.CrearRegistroConductividadElectricaEstresHidrico(entityConductividadElectricaEstresHidrico);
+        }
     }
 }

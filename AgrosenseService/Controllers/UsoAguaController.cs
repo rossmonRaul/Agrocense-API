@@ -42,5 +42,56 @@ namespace Agrosense.Service.Controllers
         {
             return Json(await this.servicioUsoAgua.CambiarEstadoRegistroSeguimientoUsoAgua(entityUsoAgua));
         }
+
+        //Eficiencia Riego
+
+        [HttpGet]
+        public async Task<JsonResult> ObtenerEficienciaRiego()
+        {
+            return Json(await this.servicioUsoAgua.ObtenerEficienciaRiego());
+        }
+
+        [HttpPost]
+        public async Task<JsonResult> CrearRegistroEficienciaRiego(EntityEficienciaRiego entityEficienciaRiego)
+        {
+            return Json(await this.servicioUsoAgua.CrearRegistroEficienciaRiego(entityEficienciaRiego));
+        }
+
+        [HttpPut]
+        public async Task<JsonResult> ActualizarRegistroEficienciaRiego(EntityEficienciaRiego entityEficienciaRiego)
+        {
+            return Json(await this.servicioUsoAgua.ActualizarRegistroEficienciaRiego(entityEficienciaRiego));
+        }
+
+        [HttpPut]
+        public async Task<JsonResult> CambiarEstadoRegistroEficienciaRiego(EntityEficienciaRiego entityEficienciaRiego)
+        {
+            return Json(await this.servicioUsoAgua.CambiarEstadoRegistroEficienciaRiego(entityEficienciaRiego));
+        }
+
+        //Conductividad electrica y riesgo de estres hidrico
+        [HttpGet]
+        public async Task<JsonResult> ObtenerConductividadElectricaEstresHidrico()
+        {
+            return Json(await this.servicioUsoAgua.ObtenerConductividadElectricaEstresHidrico());
+        }
+
+        [HttpPost]
+        public async Task<JsonResult> CrearRegistroConductividadElectricaEstresHidrico(EntityConductividadElectricaEstresHidrico entityConductividadElectricaEstresHidrico)
+        {
+            return Json(await this.servicioUsoAgua.CrearRegistroConductividadElectricaEstresHidrico(entityConductividadElectricaEstresHidrico));
+        }
+
+        [HttpPut]
+        public async Task<JsonResult> ActualizarConductividadElectricaEstresHidrico(EntityConductividadElectricaEstresHidrico entityConductividadElectricaEstresHidrico)
+        {
+            return Json(await this.servicioUsoAgua.ActualizarRegistroConductividadElectricaEstresHidrico(entityConductividadElectricaEstresHidrico));
+        }
+
+        [HttpPut]
+        public async Task<JsonResult> CambiarEstadoRegistroConductividadElectricaEstresHidrico(EntityConductividadElectricaEstresHidrico entityConductividadElectricaEstresHidrico)
+        {
+            return Json(await this.servicioUsoAgua.CambiarEstadoRegistroConductividadElectricaEstresHidrico(entityConductividadElectricaEstresHidrico));
+        }
     }
 }
