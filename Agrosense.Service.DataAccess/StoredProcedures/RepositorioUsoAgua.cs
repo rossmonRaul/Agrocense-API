@@ -105,12 +105,12 @@ namespace Agrosense.Service.DataAccess.StoredProcedures
         }
 
         //Eficiencia de Riego
-        public async Task<List<DtoUsoAgua>> ObtenerEficienciaRiego()
+        public async Task<List<DtoEficienciaRiego>> ObtenerEficienciaRiego()
         {
             try
             {
                 string query = "SPObtenerMonitoreoEficienciaRiego";
-                var result = await this.contextoBD.ObtenerListaDeDatos<DtoUsoAgua>(query);
+                var result = await this.contextoBD.ObtenerListaDeDatos<DtoEficienciaRiego>(query);
                 return result;
             }
             catch (Exception)
@@ -183,12 +183,12 @@ namespace Agrosense.Service.DataAccess.StoredProcedures
         }
 
         //Conductividad Electrica Y Estres Hidrico
-        public async Task<List<DtoUsoAgua>> ObtenerConductividadElectricaEstresHidrico()
+        public async Task<List<DtoConductividadElectricaEstresHidrico>> ObtenerConductividadElectricaEstresHidrico()
         {
             try
             {
                 string query = "";
-                var result = await this.contextoBD.ObtenerListaDeDatos<DtoUsoAgua>(query);
+                var result = await this.contextoBD.ObtenerListaDeDatos<DtoConductividadElectricaEstresHidrico>(query);
                 return result;
             }
             catch (Exception)
