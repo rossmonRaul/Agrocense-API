@@ -39,7 +39,7 @@ namespace Agrosense.Service.BusinessLogic.Servicios
         }
 
         //Eficiencia Riego
-        public async Task<List<DtoUsoAgua>> ObtenerEficienciaRiego()
+        public async Task<List<DtoEficienciaRiego>> ObtenerEficienciaRiego()
         {
             return await this.repositorioUsoAgua.ObtenerEficienciaRiego();
         }
@@ -61,7 +61,7 @@ namespace Agrosense.Service.BusinessLogic.Servicios
 
         //Eficiencia  Conductividad Electrica Estres Hidrico
 
-        public async Task<List<DtoUsoAgua>> ObtenerConductividadElectricaEstresHidrico()
+        public async Task<List<DtoConductividadElectricaEstresHidrico>> ObtenerConductividadElectricaEstresHidrico()
         {
             return await this.repositorioUsoAgua.ObtenerConductividadElectricaEstresHidrico();
         }
